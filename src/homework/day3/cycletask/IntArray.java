@@ -1,4 +1,4 @@
-package cycletask;
+package homework.day3.cycletask;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -54,7 +54,7 @@ public class IntArray {
 
         int[] newArray = ints;
         newArray[0] = lastElement;
-        newArray[newArray.length -1] = firstElement;
+        newArray[newArray.length - 1] = firstElement;
 
         for (int i : newArray) {
             System.out.print(i + " ");

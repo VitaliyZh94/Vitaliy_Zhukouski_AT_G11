@@ -1,4 +1,4 @@
-package cycletask;
+package homework.day3.cycletask;
 
 public class CycleTaskRunner {
     public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class CycleTaskRunner {
         intArray.CreateArray();
         intArray.PrintElements();
         System.out.println();
-        intArray. PrintElementsInReversOrder();
+        intArray.PrintElementsInReversOrder();
         System.out.println();
         intArray.PrintMultiplElements();
         System.out.println();
