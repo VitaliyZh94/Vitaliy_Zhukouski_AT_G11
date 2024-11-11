@@ -1,8 +1,8 @@
 package homework.day3.basetask;
 
 public class Obstacle {
-    String description;
-    String severity;
+    private String description;
+    private String severity;
 
     public Obstacle(String description, String severity) {
         this.description = description;

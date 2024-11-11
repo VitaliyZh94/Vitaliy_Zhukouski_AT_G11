@@ -1,8 +1,8 @@
 package homework.day3.basetask;
 
 public class Mouse {
-    String name;
-    int age;
+    private String name;
+    private int age;
 
     public Mouse(String name, int age) {
         this.name = name;

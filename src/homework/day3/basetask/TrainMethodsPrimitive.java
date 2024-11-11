@@ -1,7 +1,12 @@
 package homework.day3.basetask;
 
 public class TrainMethodsPrimitive {
+<<<<<<< HEAD
+
+    public void printInt(int num){
+=======
     public void printInt(int num) {
+>>>>>>> 6e567cdd517052a7a2be0be9b666610e5bf97c94
         System.out.println("я получил на вход число " + num);
     }
 

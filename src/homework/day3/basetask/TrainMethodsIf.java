@@ -1,6 +1,7 @@
 package homework.day3.basetask;
 
 public class TrainMethodsIf {
+
     public int returnNewInt(int num) {
         if (num < 8) {
             return num * 7;
