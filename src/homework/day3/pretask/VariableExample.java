@@ -1,4 +1,4 @@
-package pretask;
+package homework.day3.pretask;
 
 public class VariableExample {
     public static void main(String[] args) {

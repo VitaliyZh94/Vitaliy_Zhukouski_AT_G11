@@ -13,13 +13,12 @@ public class Bee {
         return gender;
     }
 
-    public long getWeight() {
-        return weight;
-    }
-
-
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public long getWeight() {
+        return weight;
     }
 
     public void setWeight(long weight) {

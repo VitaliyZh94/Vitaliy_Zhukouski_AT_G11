@@ -10,7 +10,7 @@ public class TrainMethodsPrimitiveRunner {
         trainMethodsPrimitive.printFloat(1.2F);
         trainMethodsPrimitive.printDouble(7.53242);
         trainMethodsPrimitive.printShort((short) 1);
-        trainMethodsPrimitive.printByte((byte)2);
+        trainMethodsPrimitive.printByte((byte) 2);
         trainMethodsPrimitive.printBoolean(true);
     }
 }
