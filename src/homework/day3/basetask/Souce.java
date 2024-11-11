@@ -1,8 +1,8 @@
-package basetask;
+package homework.day3.basetask;
 
 public class Souce {
-    String name;
-    String color;
+    private String name;
+    private String color;
 
     public Souce(String name, String color) {
         this.name = name;

@@ -10,13 +10,13 @@ public class Bottle {
 
     public Bottle(double volume, double waterTemperature) {
         this.volume = volume;
-        sparklingWater = new SparklingWater(volume);
-        sparklingWater.temperature = waterTemperature;
-        sparklingWater.pump(new Bubble[] {new Bubble(200)});
+//        sparklingWater = new SparklingWater(volume);
+//        sparklingWater.temperature = waterTemperature;
+//        sparklingWater.pump(new Bubble[] {new Bubble(200)});
     }
 
     public void open() {
-        sparklingWater.bottleIsOpen = true;
+        //sparklingWater.bottleIsOpen = true;
         sparklingWater.isOpened();
     }
 }

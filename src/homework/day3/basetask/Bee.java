@@ -1,8 +1,8 @@
-package basetask;
+package homework.day3.basetask;
 
 public class Bee {
-    String gender;
-    long weight;
+    private String gender;
+    private long weight;
 
     public Bee(String gender, long weight) {
         this.gender = gender;

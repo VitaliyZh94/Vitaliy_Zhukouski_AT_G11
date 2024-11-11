@@ -1,8 +1,8 @@
-package basetask;
+package homework.day3.basetask;
 
 public class Pineapple {
-    String grade;
-    double heatCapacity;
+    private String grade;
+    private double heatCapacity;
 
     public Pineapple(String grade, double heatCapacity) {
         this.grade = grade;
