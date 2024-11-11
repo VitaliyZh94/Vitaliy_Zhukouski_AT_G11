@@ -1,4 +1,4 @@
-package basetask;
+package homework.day3.basetask;
 
 public class TrainMethodsObjects {
     public void processMouse(Mouse mouse) {

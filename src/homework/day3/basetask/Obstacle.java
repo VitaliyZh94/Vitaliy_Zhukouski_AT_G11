@@ -1,4 +1,4 @@
-package basetask;
+package homework.day3.basetask;
 
 public class Obstacle {
     String description;
@@ -13,12 +13,12 @@ public class Obstacle {
         return description;
     }
 
-    public String getSeverity() {
-        return severity;
-    }
-
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getSeverity() {
+        return severity;
     }
 
     public void setSeverity(String severity) {

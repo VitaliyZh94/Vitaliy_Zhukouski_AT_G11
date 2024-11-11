@@ -12,7 +12,7 @@ public class Bottle {
         this.volume = volume;
         sparklingWater = new SparklingWater(volume);
         sparklingWater.temperature = waterTemperature;
-        sparklingWater.pump(new Bubble[] {new Bubble(200)});
+        sparklingWater.pump(new Bubble[]{new Bubble(200)});
     }
 
     public void open() {
