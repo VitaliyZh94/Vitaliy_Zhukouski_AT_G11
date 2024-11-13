@@ -1,4 +1,4 @@
 package homework.day5.playground.essence.material;
 
-public class Perol {
+public class Perol implements Pourable, Powerable{
 }
