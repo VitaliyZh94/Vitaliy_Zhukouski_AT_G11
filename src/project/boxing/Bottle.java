@@ -10,16 +10,6 @@ public class Bottle {
 
     public Bottle(double volume) {
         this.volume = volume;
-<<<<<<< HEAD
-//        sparklingWater = new SparklingWater(volume);
-//        sparklingWater.temperature = waterTemperature;
-//        sparklingWater.pump(new Bubble[] {new Bubble(200)});
-    }
-
-    public void open() {
-        //sparklingWater.bottleIsOpen = true;
-        sparklingWater.isOpened();
-=======
     }
 
     public double getVolume() {
@@ -50,6 +40,5 @@ public class Bottle {
         for (int i = 0; i < bubbles.length; i++) {
             bubbles[i] = new Bubble("gas");
         }
->>>>>>> 6e567cdd517052a7a2be0be9b666610e5bf97c94
     }
 }
