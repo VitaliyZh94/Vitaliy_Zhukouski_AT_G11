@@ -8,8 +8,4 @@ public class Task1 {
             System.out.println(text.charAt(i));
         }
     }
-
-    public static void main(String[] args) {
-        printChars("ASDFG");
-    }
 }

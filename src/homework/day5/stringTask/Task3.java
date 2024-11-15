@@ -16,8 +16,4 @@ public class Task3 {
             System.out.println(matcher.group());
         }
     }
-
-    public static void main(String[] args) {
-        printNumbers("ASD dsad 2 asd as443 sadad2 2131");
-    }
 }
