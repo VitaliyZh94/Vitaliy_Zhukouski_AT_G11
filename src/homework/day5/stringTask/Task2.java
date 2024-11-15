@@ -21,7 +21,4 @@ public class Task2 {
         }
     }
 
-    public static void main(String[] args) {
-        printDuplicates("hello world world world hello yes no");
-    }
 }
