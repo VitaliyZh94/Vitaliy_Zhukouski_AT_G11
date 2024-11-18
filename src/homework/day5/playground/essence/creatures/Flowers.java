@@ -2,7 +2,7 @@ package homework.day5.playground.essence.creatures;
 
 public abstract class Flowers extends Plant{
 
-    public Flowers(int mass, String name) {
-        super(mass, name);
+    public Flowers(int mass) {
+        super(mass);
     }
 }
