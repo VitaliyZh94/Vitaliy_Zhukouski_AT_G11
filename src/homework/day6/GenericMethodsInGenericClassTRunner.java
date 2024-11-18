@@ -31,9 +31,9 @@ public class GenericMethodsInGenericClassTRunner {
 
         genericMethodsInGenericClassT1.genericMethodOneGenArg("sad");
         genericMethodsInGenericClassT2.genericMethodOneGenArg(1);
-        genericMethodsInGenericClassT4.genericMethodOneGenArg(new Copter(3));
-        genericMethodsInGenericClassT5.genericMethodOneGenArg(new Plane(3));
-        genericMethodsInGenericClassT6.genericMethodOneGenArg(new Rocket(1));
+        genericMethodsInGenericClassT4.genericMethodOneGenArg(new Copter(3, "Reno"));
+        genericMethodsInGenericClassT5.genericMethodOneGenArg(new Plane(3, "Reno"));
+        genericMethodsInGenericClassT6.genericMethodOneGenArg(new Rocket(1, "Reno"));
         genericMethodsInGenericClassT7.genericMethodOneGenArg(new Car(2, "Reno"));
         genericMethodsInGenericClassT8.genericMethodOneGenArg(new Moped(4, "Aist"));
         genericMethodsInGenericClassT9.genericMethodOneGenArg(new Motorbike(5,"Harley"));
@@ -43,9 +43,9 @@ public class GenericMethodsInGenericClassTRunner {
 
         genericMethodsInGenericClassT1.genericMethodHalfGenArgs("da", "net");
         genericMethodsInGenericClassT2.genericMethodHalfGenArgs(1, "da");
-        genericMethodsInGenericClassT4.genericMethodHalfGenArgs(new Copter(3), "da");
-        genericMethodsInGenericClassT5.genericMethodHalfGenArgs(new Plane(3), "da");
-        genericMethodsInGenericClassT6.genericMethodHalfGenArgs(new Rocket(1), "da");
+        genericMethodsInGenericClassT4.genericMethodHalfGenArgs(new Copter(2,"copter"), "da");
+        genericMethodsInGenericClassT5.genericMethodHalfGenArgs(new Plane(3, "palne"), "da");
+        genericMethodsInGenericClassT6.genericMethodHalfGenArgs(new Rocket(1, "rocket"), "da");
         genericMethodsInGenericClassT7.genericMethodHalfGenArgs(new Car(2, "Reno"), "da");
         genericMethodsInGenericClassT8.genericMethodHalfGenArgs(new Moped(4, "Aist"), "da");
         genericMethodsInGenericClassT9.genericMethodHalfGenArgs(new Motorbike(5,"Harley"), "da");
@@ -55,9 +55,9 @@ public class GenericMethodsInGenericClassTRunner {
 
         System.out.println(genericMethodsInGenericClassT1.genericMethodTwoGenArgs("da", "net"));
         System.out.println(genericMethodsInGenericClassT2.genericMethodTwoGenArgs(1, 2));
-        System.out.println(genericMethodsInGenericClassT4.genericMethodTwoGenArgs(new Copter(3), new Copter(3)));
-        System.out.println(genericMethodsInGenericClassT5.genericMethodTwoGenArgs(new Plane(3), new Plane(3)));
-        System.out.println(genericMethodsInGenericClassT6.genericMethodTwoGenArgs(new Rocket(1), new Rocket(1)));
+        System.out.println(genericMethodsInGenericClassT4.genericMethodTwoGenArgs(new Copter(3, "copter"), new Copter(3, "copter")));
+        System.out.println(genericMethodsInGenericClassT5.genericMethodTwoGenArgs(new Plane(3, "plane"), new Plane(3, "plane")));
+        System.out.println(genericMethodsInGenericClassT6.genericMethodTwoGenArgs(new Rocket(1, "rocket"), new Rocket(1, "rocket")));
         System.out.println(genericMethodsInGenericClassT7.genericMethodTwoGenArgs(new Car(2, "Reno"), new Car(2, "Reno")));
         System.out.println(genericMethodsInGenericClassT8.genericMethodTwoGenArgs(new Moped(4, "Aist"), new Moped(4, "Aist")));
         System.out.println(genericMethodsInGenericClassT9.genericMethodTwoGenArgs(new Motorbike(5,"Harley"), new Motorbike(5,"Harley")));
