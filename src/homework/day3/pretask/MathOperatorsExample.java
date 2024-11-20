@@ -9,7 +9,7 @@ public class MathOperatorsExample {
         System.out.println(firstNum - secondNum);
         System.out.println(firstNum * secondNum);
 
-        if(secondNum != 0) {
+        if (secondNum != 0) {
             System.out.println((double) firstNum / secondNum);
         } else {
             System.out.println("На ноль делить нельзя");

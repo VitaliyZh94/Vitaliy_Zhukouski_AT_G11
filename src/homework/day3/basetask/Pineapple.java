@@ -1,8 +1,8 @@
-package basetask;
+package homework.day3.basetask;
 
 public class Pineapple {
-    String grade;
-    double heatCapacity;
+    private String grade;
+    private double heatCapacity;
 
     public Pineapple(String grade, double heatCapacity) {
         this.grade = grade;
@@ -13,12 +13,12 @@ public class Pineapple {
         return grade;
     }
 
-    public double getHeatCapacity() {
-        return heatCapacity;
-    }
-
     public void setGrade(String grade) {
         this.grade = grade;
+    }
+
+    public double getHeatCapacity() {
+        return heatCapacity;
     }
 
     public void setHeatCapacity(double heatCapacity) {
@@ -31,7 +31,7 @@ public class Pineapple {
         if (heatCapacity > hamsHeatCapacity) {
             System.out.println("Я ананас, теплоемкость которого больше, чем у ветчины");
         } else {
-            System.out.println( "В ветчине тепла запасется больше  :( ");
+            System.out.println("В ветчине тепла запасется больше  :( ");
         }
     }
 }
