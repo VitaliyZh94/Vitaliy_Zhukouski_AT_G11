@@ -1,6 +1,4 @@
-package cycletask;
-
-public class CycleTaskRunner {
+package cycletask;CycleTaskRunner {
     public static void main(String[] args) {
         IntArray intArray = new IntArray();
         CycleWhile cycleWhile = new CycleWhile();
