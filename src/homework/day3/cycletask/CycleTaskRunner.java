@@ -1,6 +1,7 @@
 package homework.day3.cycletask;
 
 public class CycleTaskRunner {
+
     public static void main(String[] args) {
         IntArray intArray = new IntArray();
         CycleWhile cycleWhile = new CycleWhile();

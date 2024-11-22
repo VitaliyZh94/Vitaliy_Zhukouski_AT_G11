@@ -2,7 +2,6 @@ package project.content;
 
 public class Water {
 
-    public boolean isOpened = false;
     private String color = "no";
     private String transparency = "transparent";
     private String smell = "no";
@@ -47,7 +46,9 @@ public class Water {
         this.temperature = temperature;
     }
 
-    public void isOpened() {
-        isOpened = true;
-    }
+    public void isOpened() {}
+
+    public void pump(Bubble[] bubbles) {}
+
+    public void setOpened() {}
 }
