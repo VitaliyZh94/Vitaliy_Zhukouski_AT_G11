@@ -7,23 +7,14 @@ public class SparklingWater extends Water {
     private boolean isOpened = false;
     private Bubble[] bubbles;
 
-    public SparklingWater(String color, String transparency, String smell, int temperature) {
-        super(color, transparency, smell, temperature);
 
-        isOpened();
-    }
 
     public void pump(Bubble[] bubbles) {
         this.bubbles = bubbles;
+
     }
 
-    public void setOpened() {
-        isOpened = true;
 
-        System.out.println("Let out bubbles");
-
-        degas();
-    }
 
     private void degas() {
 
@@ -49,6 +40,22 @@ public class SparklingWater extends Water {
 
         System.out.printf("Released %d bubbles per second\n", 10 + 5 * getTemperature());
     }
+
+    public void setOpened() {
+        isOpened = true;
+
+        System.out.println("Let out bubbles");
+        degas();
+
+    }
+
+    public SparklingWater(String color, String transparency, String smell, int temperature) {
+        super(color, transparency, smell, temperature);
+
+        isOpened();
+    }
+
+
 
 }
 
