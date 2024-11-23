@@ -29,9 +29,13 @@ public class Factory {
         bottle2.setBubbles(secondVolume);
         bottle2.open();
 
+        
+        
         bottle3.setWater(sparklingWater3);
         bottle3.warm(25);
         bottle3.setBubbles(thirdVolume);
         bottle3.open();
+
+
     }
 }
