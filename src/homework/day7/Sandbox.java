@@ -1,9 +1,6 @@
 package homework.day7;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Sandbox {
 
@@ -31,8 +28,27 @@ public class Sandbox {
         System.out.println("\n");
 
         Map<Integer, Sand> sandMap = new HashMap<>() {
-
         };
 
+
+        for (int i = 0; i < sandbox.size(); i++) {
+            sandMap.put(i, sandbox.get(i));
+        }
+
+        for (int i : sandMap.keySet()) {
+            System.out.println(i);
+        }
+
+        System.out.println();
+
+        for (Sand sand : sandMap.values()) {
+            System.out.println(sand);
+        }
+
+        System.out.println();
+
+        for (Map.Entry<Integer, Sand> entry : sandMap.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
     }
 }
