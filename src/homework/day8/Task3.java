@@ -20,7 +20,7 @@ public class Task3 {
             BufferedReader in = new BufferedReader(new FileReader("src/homework/day8/files/task2.txt"));
 
             while ((line = in.readLine()) != null) {
-                text.append(line).append("\n");
+                text.append(line);
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());

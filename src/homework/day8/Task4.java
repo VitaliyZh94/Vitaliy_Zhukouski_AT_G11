@@ -19,7 +19,7 @@ public class Task4 {
             String line = "";
 
             while ((line = in.readLine()) != null) {
-                stringBuilder.append(line).append("\n");
+                stringBuilder.append(line);
             }
 
         } catch (IOException e) {

@@ -21,7 +21,7 @@ public class Task5 {
             String line = null;
 
             while ((line = in.readLine()) != null) {
-                stringBuilder.append(line).append("\n");
+                stringBuilder.append(line);
             }
 
         } catch (IOException e) {

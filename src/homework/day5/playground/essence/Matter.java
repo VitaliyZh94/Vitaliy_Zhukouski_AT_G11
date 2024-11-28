@@ -1,6 +1,8 @@
 package homework.day5.playground.essence;
 
-public class Matter {
+import java.io.Serializable;
+
+public class Matter implements Serializable {
 
     protected int mass;
 
