@@ -15,4 +15,12 @@ public class Rocket extends AirCraft {
     public void fly(String direction) {
         super.fly(direction);
     }
+
+    @Override
+    public String toString() {
+        return "Rocket{" +
+                "name='" + name + '\'' +
+                ", mass=" + mass +
+                '}';
+    }
 }

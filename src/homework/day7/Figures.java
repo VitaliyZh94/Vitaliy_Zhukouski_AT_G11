@@ -1,5 +1,8 @@
 package homework.day7;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,11 +18,14 @@ public class Figures {
         figures.add("Квадрат");
         figures.add("Эллипс");
 
-        for (String string : figures) {
-            System.out.print(string + "-");
-        }
+        try (FileOutputStream fos = new FileOutputStream("./src/homework/day7/files/t.txt");
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
-        System.out.println("\n");
+            oos.writeBytes(SerializeText(figures));
+
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
 
         int wordsWithoutO = 0;
 
@@ -43,5 +49,16 @@ public class Figures {
         for (String string : figures) {
             System.out.print(string + " ");
         }
+    }
+
+    private static String SerializeText(List<String> figures) {
+
+        String newString = "";
+
+        for (String string : figures) {
+            newString += string + "-";
+        }
+
+        return newString;
     }
 }
