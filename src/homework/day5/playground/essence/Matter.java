@@ -17,4 +17,6 @@ public class Matter implements Serializable {
     public void setMass(int mass) {
         this.mass = mass;
     }
+
+
 }

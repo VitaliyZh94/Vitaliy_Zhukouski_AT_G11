@@ -16,11 +16,12 @@ public class Task8 {
             Copter copter = (Copter) ois.readObject();
             copterToString = copter.toString();
 
+
         } catch (IOException | ClassNotFoundException e) {
             System.out.println(e.getMessage());
         }
 
-        try (FileOutputStream fos = new FileOutputStream("src/homework/day8/files/task7.2.txt");
+        try (FileOutputStream fos = new FileOutputStream("src/homework/day8/files/task8.txt");
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
             oos.writeObject(copterToString);
