@@ -8,21 +8,27 @@ public class Task8 {
 
     public static void main(String[] args) {
 
-        try {
-            FileInputStream fis = new FileInputStream("src/homework/day8/files/task7.txt");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            Copter copter = (Copter)ois.readObject();
-            ois.close();
+        String copterToString = null;
 
-            String string = copter.toString();
+        try (FileInputStream fis = new FileInputStream("src/homework/day8/files/task7.txt");
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
 
-            FileOutputStream fos = new FileOutputStream("src/homework/day8/files/task7.2.txt");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(string);
-            oos.close();
+            Copter copter = (Copter) ois.readObject();
+            copterToString = copter.toString();
 
         } catch (IOException | ClassNotFoundException e) {
             System.out.println(e.getMessage());
         }
+
+        try (FileOutputStream fos = new FileOutputStream("src/homework/day8/files/task7.2.txt");
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+
+            oos.writeObject(copterToString);
+
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+
     }
 }

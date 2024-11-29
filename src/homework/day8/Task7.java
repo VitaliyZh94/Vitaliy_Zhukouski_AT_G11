@@ -10,11 +10,10 @@ public class Task7 {
 
     public static void main(String[] args) {
 
-        try {
-            FileOutputStream fos = new FileOutputStream("src/homework/day8/files/task7.txt");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+        try (FileOutputStream fos = new FileOutputStream("src/homework/day8/files/task7.txt");
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+
             oos.writeObject(new Copter(400, "Copter"));
-            oos.close();
 
         } catch (IOException e) {
             System.out.println(e.getMessage());

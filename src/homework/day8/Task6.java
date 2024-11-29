@@ -17,10 +17,11 @@ public class Task6 {
 
     private void writeToNewFile() {
 
+        StringBuilder stringBuilder = new StringBuilder();
+        String line = null;
+
         try {
 
-            StringBuilder stringBuilder = new StringBuilder();
-            String line = null;
             BufferedReader in = new BufferedReader(new FileReader("src/homework/day8/files/task2.txt"));
 
             while ((line = in.readLine()) != null) {
