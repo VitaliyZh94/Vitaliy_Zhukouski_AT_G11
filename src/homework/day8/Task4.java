@@ -14,8 +14,7 @@ public class Task4 {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        try {
-            BufferedReader in = new BufferedReader(new FileReader("src/homework/day8/files/task2.txt"));
+        try (BufferedReader in = new BufferedReader(new FileReader("src/homework/day8/files/task2.txt"))) {
             String line = "";
 
             while ((line = in.readLine()) != null) {
@@ -28,10 +27,9 @@ public class Task4 {
 
         String newText = stringBuilder.toString().replaceAll("[^eyuioaEYUIOA ]", "");
 
-        try {
-            BufferedWriter out = new BufferedWriter(new FileWriter("src/homework/day8/files/task2.txt", true));
+        try (BufferedWriter out = new BufferedWriter(new FileWriter("src/homework/day8/files/task2.txt", true))) {
             out.write(" " + newText);
-            out.close();
+
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

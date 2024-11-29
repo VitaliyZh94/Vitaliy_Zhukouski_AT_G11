@@ -16,8 +16,7 @@ public class Task5 {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        try {
-            BufferedReader in = new BufferedReader(new FileReader("src/homework/day8/files/task2.txt"));
+        try (BufferedReader in = new BufferedReader(new FileReader("src/homework/day8/files/task2.txt"))) {
             String line = null;
 
             while ((line = in.readLine()) != null) {

@@ -15,10 +15,12 @@ public class Task1 {
         String incoming = "";
 
         Scanner scanner = new Scanner(System.in);
+
         while (scanner.hasNext()){
             incoming = scanner.nextLine();
             break;
         }
+
         System.out.printf("Hello, I just got %s form you!", incoming);
     }
 }

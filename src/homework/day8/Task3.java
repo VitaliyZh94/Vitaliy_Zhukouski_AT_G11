@@ -15,23 +15,21 @@ public class Task3 {
         StringBuilder text = new StringBuilder();
         String line = "";
 
-        try {
-
-            BufferedReader in = new BufferedReader(new FileReader("src/homework/day8/files/task2.txt"));
+        try (BufferedReader in = new BufferedReader(new FileReader("src/homework/day8/files/task2.txt"))) {
 
             while ((line = in.readLine()) != null) {
                 text.append(line);
             }
+
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
 
         String newText = text.toString().replaceAll("[eyuioaEYUIOA]", "");
 
-        try {
-            BufferedWriter out = new BufferedWriter(new FileWriter("src/homework/day8/files/task2.txt"));
+        try (BufferedWriter out = new BufferedWriter(new FileWriter("src/homework/day8/files/task2.txt"))) {
             out.write(newText);
-            out.close();
+
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
