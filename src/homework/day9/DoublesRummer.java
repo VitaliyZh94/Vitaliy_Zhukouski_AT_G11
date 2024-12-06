@@ -12,11 +12,9 @@ public class DoublesRummer {
 
         Stream<Double> doubles = Stream.of(33.42, 34.3, 0.79, 2.3426, 6.8, 13.24, 5.5, 769.9);
 
-        Random random = new Random();
+        Stream<Integer> integerStream = doubles.map(x -> new Random().nextInt(0, x.intValue())).distinct();
 
-        Stream<Integer> integerStream = doubles.map(x -> random.nextInt(0, x.intValue())).distinct();
-
-        Stream<Bubble> bubbleStream = integerStream.flatMap(x -> IntStream.of(x).mapToObj(y -> new Bubble(x, "Bubble vol-" + x)));
+        Stream<Bubble> bubbleStream = integerStream.flatMap();
 
         bubbleStream.forEach(System.out::println);
         System.out.println(bubbleStream.mapToInt(x -> x.getVolume()).sum());
