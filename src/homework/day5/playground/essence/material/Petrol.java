@@ -2,9 +2,9 @@ package homework.day5.playground.essence.material;
 
 import homework.day5.playground.essence.Matter;
 
-public class Diesel extends Matter implements Pourable, Powerable{
+public class Petrol extends Matter implements Pourable, Powerable{
 
-    public Diesel(int mass) {
+    public Petrol(int mass) {
         super(mass);
     }
 
@@ -15,6 +15,6 @@ public class Diesel extends Matter implements Pourable, Powerable{
 
     @Override
     public void sound() {
-        System.out.println("wheeh..");
+        System.out.println("whooh..");
     }
 }
