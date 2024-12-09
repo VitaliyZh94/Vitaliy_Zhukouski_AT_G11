@@ -51,4 +51,5 @@ public class Water {
     public void pump(Bubble[] bubbles) {}
 
     public void setOpened() {}
+
 }
