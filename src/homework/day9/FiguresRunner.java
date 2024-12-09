@@ -15,6 +15,9 @@ public class FiguresRunner {
         figures.add("Квадрат");
         figures.add("Эллипс");
 
-        figures.stream().filter(x -> x.length() > 4).map(x -> x.replaceAll(x, "" + x.length())).forEach(System.out::println);
+        figures.stream()
+                .filter(x -> x.length() > 4)
+                .map(x -> x.replaceAll(x, "" + x.length()))
+                .forEach(System.out::println);
     }
 }

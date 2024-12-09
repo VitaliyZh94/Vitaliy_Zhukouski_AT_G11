@@ -17,16 +17,19 @@ public class WaterRunner {
                 new Water("Синяя", "Мятный", "нет", 0)
         );
 
-        Stream<Water> waterStream = water.filter(x -> !x.getColor().equals("Прозрачная")).sorted(Comparator.comparing(Water::getSmell).reversed());
+        int result = water.filter(x -> !x.getColor().equals("Прозрачная"))
+                .sorted(Comparator.comparing(Water::getSmell).reversed())
+                .map(x -> {
 
-        int result = waterStream.map(x -> {
-
-            if (x.getSmell().contains("ы")) {
-                String newSmell = x.getSmell().replace("ы", "ыы");
-                x.setSmell(newSmell);
-            }
-            return x;
-        }).map(Water::getSmell).collect(Collectors.joining(", ")).length();
+                    if (x.getSmell().contains("ы")) {
+                        String newSmell = x.getSmell().replace("ы", "ыы");
+                        x.setSmell(newSmell);
+                    }
+                    return x;
+                })
+                .map(Water::getSmell)
+                .collect(Collectors.joining(", "))
+                .length();
 
         System.out.println(result);
     }

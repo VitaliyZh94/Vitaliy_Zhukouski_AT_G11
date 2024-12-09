@@ -8,9 +8,16 @@ public class CountriesRunner {
 
     public static void main(String[] args) {
 
-        Stream<String> countries = Stream.of("Андора", "Португалия", "Англия", "Замбия");
-        Pattern vowelsPattern = Pattern.compile(".*[уеыаоэяиюУЕЫАОЭЯИЮ].*");
+        Stream<String> countries = Stream.of(
+                "Андора",
+                "Португалия",
+                "Англия",
+                "Замбия");
 
-        countries.filter(x -> vowelsPattern.matcher(x).matches()).filter( x -> x.length() < 7).map(x -> x.toUpperCase(Locale.ROOT)).map(x -> ("\"" + x + "\"")).forEach(System.out::println);
+        countries.filter(x -> Pattern.compile(".*[уеыаоэяиюУЕЫАОЭЯИЮ].*").matcher(x).matches())
+                .filter(x -> x.length() < 7)
+                .map(x -> x.toUpperCase(Locale.ROOT))
+                .map(x -> ("\"" + x + "\""))
+                .forEach(System.out::println);
     }
 }

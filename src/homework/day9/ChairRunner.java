@@ -1,6 +1,5 @@
 package homework.day9;
 
-import homework.day7.Bubble;
 import homework.day7.Chair;
 
 import java.io.BufferedWriter;
@@ -13,6 +12,18 @@ import java.util.stream.Stream;
 
 public class ChairRunner {
 
+    static String[] stringNumbers = new String[]{
+            "Zero",
+            "One",
+            "Two",
+            "Three",
+            "For",
+            "Five",
+            "Six",
+            "Seven",
+            "Eight",
+            "Nine"};
+
     public static void main(String[] args) {
 
         Stream<Chair> furniture = Stream.of(
@@ -22,29 +33,21 @@ public class ChairRunner {
                 new Chair(110, 45)
         );
 
-        Stream<Chair> furnitureStream = furniture.filter(x -> x.getHeight() >= 100 && x.getWidth() <= 50)
-                .sorted(Comparator.comparing(Chair::getHeight).thenComparing(Chair::getWidth, Comparator.reverseOrder()));
+        Optional<Integer> max = furniture.filter(x -> x.getHeight() >= 100 && x.getWidth() <= 50)
+                .sorted(Comparator.comparing(Chair::getHeight).thenComparing(Chair::getWidth, Comparator.reverseOrder()))
+                .map(x -> new Chair(x.getHeight() * new Random().nextInt(3, 9), x.getWidth() / 2))
+                .map(x -> x.getHeight() * x.getWidth())
+                .distinct()
+                .max(Integer::compareTo);
 
-        Stream<Chair> chairStream = furnitureStream.map(x -> new Chair(x.getHeight() * new Random().nextInt(3, 9), x.getWidth() / 2));
-
-        Optional<Integer> max = chairStream.map(x -> x.getHeight() * x.getWidth()).distinct().max(Integer::compareTo);
-
-        String[] words = intsToWords(max.get());
-
-        String result = String.join("-", words);
-
-        Bubble bubble = new Bubble(max.get(), result);
-
-        System.out.println(bubble);
+        System.out.println(max.get());
 
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src/homework/day9/files/Chair.txt"))) {
-            bufferedWriter.write(result);
+            bufferedWriter.write(String.join("-", intsToWords(max.get())));
         } catch (IOException e) {
             e.getStackTrace();
         }
     }
-
-    static String[] stringNumbers = new String[]{"Zero", "One", "Two", "Three", "For", "Five", "Six", "Seven", "Eight", "Nine"};
 
     private static String[] intsToWords(int num) {
 
@@ -52,7 +55,7 @@ public class ChairRunner {
         int[] intNumbers = new int[numbers.length];
 
         for (int i = 0; i < numbers.length; i++) {
-            intNumbers[i] = Integer.valueOf(numbers[i]);
+            intNumbers[i] = Integer.parseInt(numbers[i]);
         }
 
         String[] strings = new String[numbers.length];

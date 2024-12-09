@@ -6,7 +6,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Comparator;
-import java.util.List;
+import java.util.OptionalDouble;
 import java.util.stream.Stream;
 
 public class PersonRunner {
@@ -20,9 +20,9 @@ public class PersonRunner {
                 new Person(63, "Маша")
         );
 
-        List<Person> peoples = people.filter(x -> x.getAge() < 60).sorted(Comparator.comparing(x -> x.getName().charAt(0))).toList();
-
-        double average = (peoples.stream().mapToDouble(x -> x.getAge() + 4).sum()) / peoples.stream().count();
+        double average = people.filter(x -> x.getAge() < 60)
+                .sorted(Comparator.comparing(x -> x.getName().charAt(0)))
+                .map(x -> x.getAge() * 4).mapToInt(Integer::intValue).average().orElse(0);
 
         try (BufferedWriter out = new BufferedWriter(new FileWriter("src/homework/day9/files/person.txt"))) {
             out.write(String.valueOf(average));
