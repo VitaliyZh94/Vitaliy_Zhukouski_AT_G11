@@ -1,0 +1,17 @@
+.ph-logo - Mail
+
+a[data-click-counter='417831799, 61021856'] - Облако
+
+a[data-click-counter='417831800, 61021854, 90824763'] - Почта
+
+#mailbox .resplash-btn_primary - Войти
+
+#mailbox .footer - Создать почту
+
+a[data-click-counter='75068995'] - Регистрация
+
+a[href='//lady.mail.ru/'] - Леди
+
+button[data-testid='search-button'] - Найти
+
+//li[@data-click-counter='421250422'] - Новостная строка
