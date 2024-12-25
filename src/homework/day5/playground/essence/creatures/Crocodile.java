@@ -5,4 +5,9 @@ public class Crocodile extends Vertebrata implements Crawlable{
     public Crocodile(int mass, String name) {
         super(mass, name);
     }
+
+    @Override
+    public String getSound() {
+        return "wr-wr-wrr-r..";
+    }
 }

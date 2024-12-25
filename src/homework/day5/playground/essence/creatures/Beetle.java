@@ -16,4 +16,9 @@ public class Beetle extends Insect implements Crawlable{
         }
 
     }
+
+    @Override
+    public String getSound() {
+        return "vz-vz-vzz-zz..";
+    }
 }
