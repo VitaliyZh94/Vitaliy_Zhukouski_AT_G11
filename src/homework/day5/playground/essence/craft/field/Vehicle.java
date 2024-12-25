@@ -4,7 +4,9 @@ import homework.day5.playground.essence.Matter;
 import homework.day5.playground.essence.craft.Rideable;
 import homework.day5.playground.essence.craft.Transportable;
 
-public abstract class Vehicle extends Matter implements Transportable, Rideable {
+import java.io.Serializable;
+
+public abstract class Vehicle extends Matter implements Transportable, Rideable, Serializable {
 
     protected String name;
 
