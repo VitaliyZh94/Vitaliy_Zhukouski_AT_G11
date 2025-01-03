@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class BookingSettings {
 
     public static String PARIS = "Париж";
+    public static String email = "kozz09@mail.ru";
 
     private LocalDate arrivalDate = LocalDate.now().plusDays(2);
     private LocalDate departureDate = LocalDate.now().plusDays(9);

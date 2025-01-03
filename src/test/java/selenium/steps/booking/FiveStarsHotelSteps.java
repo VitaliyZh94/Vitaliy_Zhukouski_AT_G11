@@ -1,4 +1,4 @@
-package selenium.steps;
+package selenium.steps.booking;
 
 import selenium.driver.Driver;
 import io.cucumber.java.en.Given;

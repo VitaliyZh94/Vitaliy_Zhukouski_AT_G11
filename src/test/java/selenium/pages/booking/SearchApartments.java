@@ -40,14 +40,14 @@ public class SearchApartments extends BookingBase {
     public void setArrivalDate(LocalDate date) {
         arrivalDate = date;
 //        driver.findElement(By.xpath(arrivalDateButton)).click();
-        driver.findElement(By.xpath("//span[@data-date='2025-01-02']")).click();
+        driver.findElement(By.xpath("//span[@data-date='2025-01-02']")).click();//todo
         checkAndCloseRegistrationPopUp();
     }
 
     public void setDepartureDate(LocalDate date) {
         departurelDate = date;
 //        driver.findElement(By.xpath(departureDateButton)).click();
-        driver.findElement(By.xpath("//span[@data-date='2025-01-04']")).click();
+        driver.findElement(By.xpath("//span[@data-date='2025-01-04']")).click();//todo
 
         checkAndCloseRegistrationPopUp();
     }

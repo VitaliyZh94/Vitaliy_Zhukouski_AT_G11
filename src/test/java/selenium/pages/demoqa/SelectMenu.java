@@ -1,4 +1,4 @@
-package selenium.pages.demoQA;
+package selenium.pages.demoqa;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;

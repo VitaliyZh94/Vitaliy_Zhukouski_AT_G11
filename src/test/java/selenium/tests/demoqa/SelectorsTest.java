@@ -1,7 +1,7 @@
-package selenium.tests.demo_qa;
+package selenium.tests.demoqa;
 
 import org.junit.Test;
-import selenium.pages.demoQA.SelectMenu;
+import selenium.pages.demoqa.SelectMenu;
 
 
 public class SelectorsTest extends DemoQABaseTest {

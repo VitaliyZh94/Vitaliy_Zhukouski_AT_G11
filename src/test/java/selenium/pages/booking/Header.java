@@ -7,6 +7,7 @@ public class Header extends BookingBase {
 
     private final String CURRENCY_ICON = "//button[@data-testid='header-currency-picker-trigger']";
     private final String CURRENCY_HINT = "(//script[@type='text/javascript']/following-sibling::div/div)[last()]";
+    private final String LOG_IN_BUTTON = "//a[@data-testid ='header-sign-in-button']";
 
     Actions actions = new Actions(driver);
 
@@ -16,6 +17,10 @@ public class Header extends BookingBase {
                 .perform();
 
         checkAndCloseRegistrationPopUp();
+    }
+
+    public void clickLogInButton() {
+        driver.findElement(By.xpath(LOG_IN_BUTTON)).click();
     }
 
     public String currencyHintsText() {

@@ -1,4 +1,4 @@
-package selenium.pages.demoQA;
+package selenium.pages.demoqa;
 
 import selenium.driver.Driver;
 import org.openqa.selenium.WebDriver;

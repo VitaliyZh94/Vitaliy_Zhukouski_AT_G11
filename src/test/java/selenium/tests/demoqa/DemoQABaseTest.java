@@ -1,10 +1,10 @@
-package selenium.tests.demo_qa;
+package selenium.tests.demoqa;
 
 import selenium.driver.Driver;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
-import selenium.pages.demoQA.DemoQABase;
+import selenium.pages.demoqa.DemoQABase;
 
 
 public class DemoQABaseTest {

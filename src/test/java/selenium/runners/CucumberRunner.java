@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "summary"},
         glue = {"selenium"},
-        features = {"src/test/resources/features/FiveStarsHotel.feature"},
+        features = {"src/test/resources/features/booking/HeaderElement.feature"},
         tags = "@QA"
 )
 public class CucumberRunner {
