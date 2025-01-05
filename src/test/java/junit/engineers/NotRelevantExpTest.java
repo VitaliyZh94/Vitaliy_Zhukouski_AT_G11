@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class NotRelevantExpTest {
+public class NotRelevantExpTest extends EngineerJUnitBaseTest {
 
     final int AGE = 25;
     final int EXP = 0;
@@ -32,22 +32,28 @@ public class NotRelevantExpTest {
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantExpToConstructorAQA() {
         new AutomatedEngineer(AGE, inputExp);
+        LOGGER.debug("");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantExpToConstructorQA() {
         new ManualEngineer(AGE, inputExp);
+        LOGGER.debug("");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantExpToSetterAQA() {
         AutomatedEngineer ae = new AutomatedEngineer(AGE, EXP);
         ae.setExperience(inputExp);
+
+        LOGGER.debug("");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantExpToSetterQA() {
         ManualEngineer me = new ManualEngineer(AGE, EXP);
         me.setExperience(inputExp);
+
+        LOGGER.debug("");
     }
 }

@@ -1,5 +1,6 @@
 package selenium.tests.demoqa;
 
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import selenium.pages.demoqa.SelectMenu;
 
@@ -13,5 +14,7 @@ public class SelectorsTest extends DemoQABaseTest {
     @Test
     public void checkFirstSelector() {
         //Assert.assertEquals("Must be: Blue", selectMenu.selectFirstSelect(3), ;
+
+        LOGGER.debug("");
     }
 }

@@ -22,29 +22,43 @@ public class SearchApartments extends BookingBase {
 
 
     public void clickOnLocationField() {
+        LOGGER.trace("Click on location field {}", LOCATION_FIELD);
+
         driver.findElement(By.xpath(LOCATION_FIELD)).click();
+
         checkAndCloseRegistrationPopUp();
     }
 
     public void enterLocation(String location) {
+        LOGGER.trace("Enter location to field {}", LOCATION_FIELD);
+
         WebElement field = driver.findElement(By.xpath(LOCATION_FIELD));
         field.sendKeys(location);
+
         checkAndCloseRegistrationPopUp();
     }
 
     public void clickDatesTable() {
+        LOGGER.trace("Clock on dates table {}", DATES_TABLE);
+
         driver.findElement(By.xpath(DATES_TABLE)).click();
+
         checkAndCloseRegistrationPopUp();
     }
 
     public void setArrivalDate(LocalDate date) {
+        LOGGER.trace("Set arrival date {}", arrivalDateButton);
+
         arrivalDate = date;
 //        driver.findElement(By.xpath(arrivalDateButton)).click();
         driver.findElement(By.xpath("//span[@data-date='2025-01-02']")).click();//todo
+
         checkAndCloseRegistrationPopUp();
     }
 
     public void setDepartureDate(LocalDate date) {
+        LOGGER.trace("Set arrival date {}", departureDateButton);
+
         departurelDate = date;
 //        driver.findElement(By.xpath(departureDateButton)).click();
         driver.findElement(By.xpath("//span[@data-date='2025-01-04']")).click();//todo
@@ -53,22 +67,31 @@ public class SearchApartments extends BookingBase {
     }
 
     public void clickResettlementTable() {
+        LOGGER.trace("CLick on resettlement table {}", RESETTLEMENT_TABLE);
+
         driver.findElement(By.xpath(RESETTLEMENT_TABLE)).click();
+
         checkAndCloseRegistrationPopUp();
     }
 
     public void clickPlusAdultsButton() {
         driver.findElement(By.xpath(PLUS_ADULTS_BUTTON)).click();
+
+        LOGGER.trace("Click to plus adults button {}", PLUS_ADULTS_BUTTON);
         checkAndCloseRegistrationPopUp();
     }
 
     public void clickPlusApartmentsButton() {
         driver.findElement(By.xpath(PLUS_APARTMENTS_BUTTON)).click();
+
+        LOGGER.trace("Click to plus apartment button {}", PLUS_APARTMENTS_BUTTON);
         checkAndCloseRegistrationPopUp();
     }
 
     public void submitResettlementTable() {
         driver.findElement(By.xpath(SUBMIT_BUTTON)).click();
+
+        LOGGER.trace("Click on button to submit resettlement table {}", SUBMIT_BUTTON);
         checkAndCloseRegistrationPopUp();
     }
 }

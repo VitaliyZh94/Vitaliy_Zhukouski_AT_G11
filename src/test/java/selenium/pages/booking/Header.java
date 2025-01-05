@@ -12,18 +12,24 @@ public class Header extends BookingBase {
     Actions actions = new Actions(driver);
 
     public void hoverCurrencyIcon() {
+
         actions.moveToElement(driver.findElement(By.xpath(CURRENCY_ICON)))
                 .build()
                 .perform();
 
+        LOGGER.trace("Hover to currency icon {}", CURRENCY_ICON);
         checkAndCloseRegistrationPopUp();
     }
 
     public void clickLogInButton() {
         driver.findElement(By.xpath(LOG_IN_BUTTON)).click();
+
+        LOGGER.trace("Click log in button {}", LOG_IN_BUTTON);
+        checkAndCloseRegistrationPopUp();
     }
 
     public String currencyHintsText() {
+        LOGGER.trace("Return text in currency hint {}", CURRENCY_HINT);
         return driver.findElement(By.xpath(CURRENCY_HINT)).getText();
     }
 }

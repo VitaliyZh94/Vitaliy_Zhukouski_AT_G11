@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class GetSkillTest {
+public class GetSkillTest extends EngineerJUnitBaseTest {
 
     final int AGE = 25;
     int inputExp;
@@ -23,7 +23,7 @@ public class GetSkillTest {
     @Parameterized.Parameters
     public static Collection<Object[]> obj() {
         return Arrays.asList(new Object[][]{
-                {0},
+                {8},
                 {7},
         });
     }
@@ -32,11 +32,16 @@ public class GetSkillTest {
     public void skillTestAQA() {
         AutomatedEngineer ae = new AutomatedEngineer(AGE, inputExp);
         Assert.assertEquals("Skill is not relevant", inputExp * ae.getCoeff(), ae.getSkill());
+
+        assertEqualLogs(inputExp * ae.getCoeff(), ae.getSkill());
+        //LOGGER.debug("" + Thread.currentThread().getStackTrace()[1].getMethodName());
     }
 
     @Test
     public void skillTestQA() {
         ManualEngineer me = new ManualEngineer(AGE, inputExp);
         Assert.assertEquals("Skill is not relevant", inputExp * me.getCoeff(), me.getSkill());
+
+        LOGGER.debug("");
     }
 }

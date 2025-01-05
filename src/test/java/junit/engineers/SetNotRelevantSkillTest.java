@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class SetNotRelevantSkillTest {
+public class SetNotRelevantSkillTest extends EngineerJUnitBaseTest {
 
     final int AGE = 25;
     final int EXP = 0;
@@ -32,11 +32,15 @@ public class SetNotRelevantSkillTest {
     public void setNotRelevantSkillAQA() {
         AutomatedEngineer ae = new AutomatedEngineer(AGE, EXP);
         ae.setSkill(inputSkill);
+
+        LOGGER.debug("");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantSkillQA() {
         ManualEngineer me = new ManualEngineer(AGE, EXP);
         me.setSkill(inputSkill);
+
+        LOGGER.debug("");
     }
 }

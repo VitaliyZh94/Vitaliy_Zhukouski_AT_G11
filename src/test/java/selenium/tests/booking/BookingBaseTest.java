@@ -1,5 +1,7 @@
 package selenium.tests.booking;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import selenium.driver.Driver;
 import org.junit.After;
 import org.junit.Before;
@@ -9,10 +11,13 @@ import selenium.pages.booking.BookingBase;
 
 public class BookingBaseTest {
 
+    protected static final Logger LOGGER = LogManager.getLogger(BookingBase.class);
     protected static WebDriver driver;
 
     @Before
     public void openSite() {
+        LOGGER.info("Start " + getClass().getSimpleName());
+
         driver = Driver.getDriver();
         driver.get(BookingBase.URL);
     }
@@ -20,5 +25,6 @@ public class BookingBaseTest {
     @After
     public void quitDriver() {
         driver.close();
+        LOGGER.info("Finished " + getClass().getSimpleName());
     }
 }

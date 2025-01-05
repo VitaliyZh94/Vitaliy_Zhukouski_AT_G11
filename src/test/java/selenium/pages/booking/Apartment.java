@@ -10,8 +10,7 @@ public class Apartment extends BookingBase {
         String apartmentRateText = driver.findElement(By.xpath(APARTMENT_RATE)).getText();
         String[] split = apartmentRateText.split(" ");
 
+        LOGGER.trace("Return apartment rate {}", APARTMENT_RATE);
         return Double.valueOf(split[1]);
     }
-
-
 }

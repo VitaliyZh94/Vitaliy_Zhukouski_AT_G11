@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class RelevantExpTest { //check set to constructor and setter + getter
+public class RelevantExpTest extends EngineerJUnitBaseTest { //check set to constructor and setter + getter
 
     final int AGE = 25;
     final int EXP = 0;
@@ -34,12 +34,16 @@ public class RelevantExpTest { //check set to constructor and setter + getter
     public void setRelevantExpToConstructorAQA() {
         AutomatedEngineer ae = new AutomatedEngineer(AGE, inputExp);
         Assert.assertEquals("Exp is not relevant", inputExp, ae.getExperience());
+
+        LOGGER.debug("");
     }
 
     @Test
     public void setRelevantExpToConstructorQA() {
         ManualEngineer me = new ManualEngineer(AGE, inputExp);
         Assert.assertEquals("Exp is not relevant", inputExp, me.getExperience());
+
+        LOGGER.debug("");
     }
 
     @Test
@@ -47,6 +51,8 @@ public class RelevantExpTest { //check set to constructor and setter + getter
         AutomatedEngineer ae = new AutomatedEngineer(AGE, EXP);
         ae.setExperience(inputExp);
         Assert.assertEquals("Exp is not relevant", inputExp, ae.getExperience());
+
+        LOGGER.debug("");
     }
 
     @Test
@@ -54,5 +60,7 @@ public class RelevantExpTest { //check set to constructor and setter + getter
         ManualEngineer me = new ManualEngineer(AGE, EXP);
         me.setExperience(inputExp);
         Assert.assertEquals("Exp is not relevant", inputExp, me.getExperience());
+
+        LOGGER.debug("");
     }
 }

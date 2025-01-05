@@ -21,6 +21,8 @@ public class HotelRateTest extends BookingBaseTest{
     public void enterLocationField() {
         searchApartments.clickOnLocationField();
         searchApartments.enterLocation("Прага");
+
+        LOGGER.debug("");
     }
 
     @Test
@@ -29,12 +31,16 @@ public class HotelRateTest extends BookingBaseTest{
         searchApartments.clickDatesTable();
         searchApartments.setArrivalDate(bookingSettings.getArrivalDate());
         searchApartments.setDepartureDate(bookingSettings.getDepartureDate());
+
+        LOGGER.debug("");
     }
 
     @Test
     public void setResettlement() {
         setDates();
         searchApartments.submitResettlementTable();
+
+        LOGGER.debug("");
     }
 
     @Test
@@ -42,13 +48,17 @@ public class HotelRateTest extends BookingBaseTest{
         setResettlement();
         sortApartments.clickSortDropDown();
         sortApartments.clickDescendingApartments();
+
+        LOGGER.debug("");
     }
 
     @Test
     public void openFirstApartment() {
         sortApartments();
-        js.openURLInCurrentTab(sortApartments.getFirstDescendingApartment());
+        js.openURLInCurrentTab(sortApartments.getFIRST_DESCENDING_APARTMENT());
         sortApartments.clickFirstDescendingApartment();
+
+        LOGGER.debug("");
     }
 
     @Test
@@ -57,5 +67,7 @@ public class HotelRateTest extends BookingBaseTest{
         Assert.assertEquals("Rate must be more than 9",
                 true,
                 apartment.getApartmentRate() > 9);
+
+        LOGGER.debug("");
     }
 }

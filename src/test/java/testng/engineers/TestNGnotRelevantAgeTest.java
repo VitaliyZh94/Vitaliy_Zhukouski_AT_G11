@@ -5,7 +5,7 @@ import engineers.ManualEngineer;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class TestNGnotRelevantAgeTest {
+public class TestNGnotRelevantAgeTest extends EngineerTestNGBaseTest {
 
     final int EXP = 0;
     final int AGE = 25;
@@ -20,23 +20,29 @@ public class TestNGnotRelevantAgeTest {
     @Test(dataProvider = "t", expectedExceptions = IllegalArgumentException.class)
     public void setNotRelevantAgeToConstructorAQA(int inputAge) {
         new AutomatedEngineer(inputAge, EXP);
+        LOGGER.debug("");
     }
 
     @Test(dataProvider = "t", expectedExceptions = IllegalArgumentException.class)
     public void setNotRelevantAgeToConstructorQA(int inputAge) {
         new ManualEngineer(inputAge, EXP);
+        LOGGER.debug("");
     }
 
     @Test(dataProvider = "t", expectedExceptions = IllegalArgumentException.class)
     public void setNotRelevantAgeToSetterAQA(int inputAge) {
         AutomatedEngineer ae = new AutomatedEngineer(AGE, EXP);
         ae.setAge(inputAge);
+
+        LOGGER.debug("");
     }
 
     @Test(dataProvider = "t", expectedExceptions = IllegalArgumentException.class)
     public void setNotRelevantAgeToSetterQA(int inputAge) {
         ManualEngineer me = new ManualEngineer(AGE, EXP);
         me.setAge(inputAge);
+
+        LOGGER.debug("");
     }
 
 }

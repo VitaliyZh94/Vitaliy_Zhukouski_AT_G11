@@ -19,6 +19,8 @@ public class FiveStarsHotelTest extends BookingBaseTest {
     public void enterLocationField() {
         searchApartments.clickOnLocationField();
         searchApartments.enterLocation("Париж");
+
+        LOGGER.debug("");
     }
 
     //@Test
@@ -27,6 +29,8 @@ public class FiveStarsHotelTest extends BookingBaseTest {
         searchApartments.clickDatesTable();
         searchApartments.setArrivalDate(bookingSettings.getArrivalDate());
         searchApartments.setDepartureDate(bookingSettings.getDepartureDate());
+
+        LOGGER.debug("");
     }
 
     //@Test
@@ -38,12 +42,16 @@ public class FiveStarsHotelTest extends BookingBaseTest {
         searchApartments.clickPlusApartmentsButton();
         searchApartments.clickPlusApartmentsButton();
         searchApartments.submitResettlementTable();
+
+        LOGGER.debug("");
     }
 
     //@Test
     public void filterApartments() {
         setResettlement();
         filtersApartments.setFiveStars();
+
+        LOGGER.debug("");
     }
 
     //@Test
@@ -51,6 +59,8 @@ public class FiveStarsHotelTest extends BookingBaseTest {
         filterApartments();
         sortApartments.clickSortDropDown();
         sortApartments.clickDescendingApartments();
+
+        LOGGER.debug("");
     }
 
     @Test
@@ -59,5 +69,7 @@ public class FiveStarsHotelTest extends BookingBaseTest {
         Assert.assertEquals("Must be 5 stars apartments",
                 true,
                 sortApartments.fifthStarExist());
+
+        LOGGER.debug("");
     }
 }

@@ -16,5 +16,7 @@ public class HeaderTest extends BookingBaseTest {
         Assert.assertEquals("Text must be: Выберите валюту",
                 "Выберите валюту",
                 header.currencyHintsText());
+
+        LOGGER.debug("");
     }
 }

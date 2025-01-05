@@ -13,6 +13,8 @@ public class ScreenshotHotelTest extends BookingBaseTest {
         hotelsInVilnius.openHotelsInVilniusPage();
         hotelsInVilnius.openNextHotelsPage();
         hotelsInVilnius.openHotelOnNextPage();
+
+        LOGGER.debug("");
     }
 
     @Test
@@ -21,6 +23,8 @@ public class ScreenshotHotelTest extends BookingBaseTest {
         hotelsInVilnius.scrollToHotelsCard();
         hotelsInVilnius.changeBackToGreen();
         hotelsInVilnius.changeTittleToRed();
+
+        LOGGER.debug("");
     }
 
     @Test
@@ -28,5 +32,7 @@ public class ScreenshotHotelTest extends BookingBaseTest {
         openHotelOnNextPage();
         changeHotelsCardVisual();
         hotelsInVilnius.screenShot();
+
+        LOGGER.debug("");
     }
 }

@@ -13,5 +13,7 @@ public class LogInPage extends BookingBase{
         WebElement emailField = driver.findElement(By.xpath(EMAIL_FIELD));
         emailField.click();
         emailField.sendKeys(BookingSettings.email);
+
+        LOGGER.trace("Enter email to field {}", EMAIL_FIELD);
     }
 }

@@ -20,47 +20,63 @@ public class HotelsInVilnius extends BookingBase {
 
     public void openHotelsInVilniusPage() {
         driver.findElement(By.xpath(HOTELS_IN_VILNIUS_BUTTON)).click();
+
+        LOGGER.trace("Open all hotels in Vilnius page. {}", HOTELS_IN_VILNIUS_BUTTON);
         checkAndCloseRegistrationPopUp();
     }
 
     public void openNextHotelsPage() {
         driver.findElement(By.xpath(NEXT_HOTELS_PAGE_BUTTON)).click();
+
+        LOGGER.trace("Open hotels on next page. {}", NEXT_HOTELS_PAGE_BUTTON);
         checkAndCloseRegistrationPopUp();
     }
 
     public void openHotelOnNextPage() {
         driver.findElement(By.xpath(HOTEL_ON_NEXT_PAGE)).click();
+
+        LOGGER.trace("Open hotel on next page. {}", HOTEL_ON_NEXT_PAGE);
         checkAndCloseRegistrationPopUp();
     }
 
     public void scrollToHotelsCard() {
         make.scrollToElement(getHotelOnNextPage()).build().perform();
+
+        LOGGER.trace("Scroll to hotels card. {}", HOTEL_ON_NEXT_PAGE);
         checkAndCloseRegistrationPopUp();
     }
 
     public void changeBackToGreen() {
         js.executeScript("arguments[0].style.backgroundColor = 'green';", getHotelOnNextPage());
+
+        LOGGER.trace("Make hotels card backend green. {}", HOTEL_ON_NEXT_PAGE);
         checkAndCloseRegistrationPopUp();
     }
 
     public void changeTittleToRed() {
         WebElement tittle = driver.findElement(By.xpath(TITTLE_OF_HOTEL_ON_NEXT_PAGE));
         js.executeScript("arguments[0].style.color = 'red'", tittle);
+
+        LOGGER.trace("Make tittle of hotels card red");
         checkAndCloseRegistrationPopUp();
     }
 
     public void screenShot() {
+        String fileName = "hotel10";
+
         File screenshotAs = screenshot.getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(screenshotAs, new File("hotel10"));
+            FileUtils.copyFile(screenshotAs, new File(fileName));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+        LOGGER.trace("Make screenshot {}",fileName);
         checkAndCloseRegistrationPopUp();
     }
 
     private WebElement getHotelOnNextPage() {
+        LOGGER.trace("Return web element {}", HOTEL_ON_NEXT_PAGE);
         return driver.findElement(By.xpath(HOTEL_ON_NEXT_PAGE));
     }
 }

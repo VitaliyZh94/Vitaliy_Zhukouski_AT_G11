@@ -6,6 +6,10 @@ import org.openqa.selenium.WebElement;
 
 public class CucumberSitePageObject {
 
+
+    //CLASSWORK
+
+
     private static final String START_DATE_XPATH = "//td[@data-date='%s']";
     private static final String ADULTS_UP_XPATH = "//button[@aria-label='Increase number of Adults']/span";
     private static final String GUESTS_TOGGLE_CSS = "#xp__guests__toggle";

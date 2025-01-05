@@ -20,7 +20,7 @@ public abstract class Engineer extends Person {
         this.skill = skill;
 
         if (skill < 0 || skill > 200) {
-            throw new IllegalArgumentException("Skill is not valid");
+            throw new IllegalArgumentException("Skill is not valid: skill < 0 || skill > 200");
         }
     }
 
@@ -35,7 +35,7 @@ public abstract class Engineer extends Person {
 
     private void experienceAdmission(int age, int experience) {
         if (age - experience < 18 || experience < 0) {
-            throw new IllegalArgumentException("Experience is not valid");
+            throw new IllegalArgumentException("Experience is not valid: age - experience < 18 || experience < 0");
         }
     }
 }

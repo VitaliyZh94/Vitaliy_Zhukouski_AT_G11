@@ -13,12 +13,15 @@ public class SelectMenu extends DemoQABase {
     public void selectFirstSelect(int value) {
         select = new Select(driver.findElement(By.xpath(FIRST_SELECT)));
         select.selectByValue(Integer.toString(value));
+
+        LOGGER.trace("Select first select {}", FIRST_SELECT);
     }
 
     public void selectSecondSelect(int value) {
         select = new Select(driver.findElement(By.xpath(SECOND_SELECT)));
         select.selectByValue(Integer.toString(value));
 
+        LOGGER.trace("Select second select {}", SECOND_SELECT);
         //todo
     }
 }

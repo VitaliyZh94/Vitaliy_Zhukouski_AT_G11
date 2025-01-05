@@ -1,5 +1,7 @@
 package selenium.pages.booking;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import selenium.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -14,16 +16,27 @@ import java.time.Duration;
 public class BookingBase {
 
     public static final String URL = "https://www.booking.com/";
+
     protected WebDriver driver = Driver.getDriver();
+    protected static final Logger LOGGER = LogManager.getLogger(BookingBase.class);
+
+    private static final String REGISTRATION_POPUP = "//button[@aria-label='Скрыть меню входа в аккаунт.']";
 
     protected void checkAndCloseRegistrationPopUp() {
+
+        LOGGER.trace("Check registration pop-up {}", REGISTRATION_POPUP);
+
         try {
+
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-            WebElement element = wait.until(ExpectedConditions.elementToBeClickable((By.xpath("//button[@aria-label='Скрыть меню входа в аккаунт.']"))));
+            WebElement element = wait.until(ExpectedConditions.elementToBeClickable((By.xpath(REGISTRATION_POPUP))));
 
             element.click();
+
+            LOGGER.trace("Registration pop-up closed {}", REGISTRATION_POPUP);
+
         } catch (TimeoutException e) {
-            System.out.println("Popup closed or not found");
+            LOGGER.error(e.getMessage());
         }
     }
 }
