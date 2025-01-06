@@ -2,6 +2,7 @@ package junit.engineers;
 
 import engineers.AutomatedEngineer;
 import engineers.ManualEngineer;
+import junit.utils.JUnitLogger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +12,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class RelevantExpTest extends EngineerJUnitBaseTest { //check set to constructor and setter + getter
+public class RelevantExpTest  {
 
     final int AGE = 25;
     final int EXP = 0;
@@ -33,34 +34,38 @@ public class RelevantExpTest extends EngineerJUnitBaseTest { //check set to cons
     @Test
     public void setRelevantExpToConstructorAQA() {
         AutomatedEngineer ae = new AutomatedEngineer(AGE, inputExp);
-        Assert.assertEquals("Exp is not relevant", inputExp, ae.getExperience());
+        int actualExp = ae.getExperience();
+        Assert.assertEquals("Exp is not relevant: expected = " + inputExp + ", actual = " + actualExp, inputExp, actualExp);
 
-        LOGGER.debug("");
+        JUnitLogger.assertEqualsLogs(inputExp, actualExp);
     }
 
     @Test
     public void setRelevantExpToConstructorQA() {
         ManualEngineer me = new ManualEngineer(AGE, inputExp);
-        Assert.assertEquals("Exp is not relevant", inputExp, me.getExperience());
+        int actualExp = me.getExperience();
+        Assert.assertEquals("Exp is not relevant: expected = " + inputExp + ", actual = " + actualExp, inputExp, actualExp);
 
-        LOGGER.debug("");
+        JUnitLogger.assertEqualsLogs(inputExp, actualExp);
     }
 
     @Test
     public void setToSetterRelevantExpAQA() {
         AutomatedEngineer ae = new AutomatedEngineer(AGE, EXP);
         ae.setExperience(inputExp);
-        Assert.assertEquals("Exp is not relevant", inputExp, ae.getExperience());
+        int actualExp = ae.getExperience();
+        Assert.assertEquals("Exp is not relevant: expected = " + inputExp + ", actual = " + actualExp, inputExp, actualExp);
 
-        LOGGER.debug("");
+        JUnitLogger.assertEqualsLogs(inputExp, actualExp);
     }
 
     @Test
     public void setToSetterRelevantExpQA() {
         ManualEngineer me = new ManualEngineer(AGE, EXP);
         me.setExperience(inputExp);
-        Assert.assertEquals("Exp is not relevant", inputExp, me.getExperience());
+        int actualExp = me.getExperience();
+        Assert.assertEquals("Exp is not relevant: expected = " + inputExp + ", actual = " + actualExp, inputExp, actualExp);
 
-        LOGGER.debug("");
+        JUnitLogger.assertEqualsLogs(inputExp, actualExp);
     }
 }

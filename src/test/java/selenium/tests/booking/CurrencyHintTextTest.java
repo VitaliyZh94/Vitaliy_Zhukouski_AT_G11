@@ -1,11 +1,12 @@
 package selenium.tests.booking;
 
+import junit.utils.JUnitLogger;
 import org.junit.Assert;
 import org.junit.Test;
 import selenium.pages.booking.Header;
 
 
-public class HeaderTest extends BookingBaseTest {
+public class CurrencyHintTextTest extends BookingBaseTest {
 
     Header header = new Header();
 
@@ -14,9 +15,9 @@ public class HeaderTest extends BookingBaseTest {
         header.hoverCurrencyIcon();
 
         Assert.assertEquals("Text must be: Выберите валюту",
-                "Выберите валюту",
+                "Выберите влюту",
                 header.currencyHintsText());
 
-        LOGGER.debug("");
+        JUnitLogger.assertEqualsLogs("Выберите валюту", header.currencyHintsText());
     }
 }

@@ -2,6 +2,7 @@ package junit.engineers;
 
 import engineers.AutomatedEngineer;
 import engineers.ManualEngineer;
+import junit.utils.JUnitLogger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -10,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class NotRelevantExpTest extends EngineerJUnitBaseTest {
+public class NotRelevantExpTest {
 
     final int AGE = 25;
     final int EXP = 0;
@@ -31,29 +32,56 @@ public class NotRelevantExpTest extends EngineerJUnitBaseTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantExpToConstructorAQA() {
-        new AutomatedEngineer(AGE, inputExp);
-        LOGGER.debug("");
+
+        try {
+            new AutomatedEngineer(AGE, inputExp);
+
+            JUnitLogger.illegalArgumentExceptionFailedLogs();
+        } catch (IllegalArgumentException e) {
+            JUnitLogger.illegalArgumentExceptionPassedLogs();
+            throw e;
+        }
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantExpToConstructorQA() {
-        new ManualEngineer(AGE, inputExp);
-        LOGGER.debug("");
+
+        try {
+            new ManualEngineer(AGE, inputExp);
+
+            JUnitLogger.illegalArgumentExceptionFailedLogs();
+        } catch (IllegalArgumentException e) {
+            JUnitLogger.illegalArgumentExceptionPassedLogs();
+            throw e;
+        }
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantExpToSetterAQA() {
-        AutomatedEngineer ae = new AutomatedEngineer(AGE, EXP);
-        ae.setExperience(inputExp);
 
-        LOGGER.debug("");
+        try {
+            AutomatedEngineer ae = new AutomatedEngineer(AGE, EXP);
+            ae.setExperience(inputExp);
+
+            JUnitLogger.illegalArgumentExceptionFailedLogs();
+        } catch (IllegalArgumentException e) {
+            JUnitLogger.illegalArgumentExceptionPassedLogs();
+            throw e;
+        }
+
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantExpToSetterQA() {
-        ManualEngineer me = new ManualEngineer(AGE, EXP);
-        me.setExperience(inputExp);
 
-        LOGGER.debug("");
+        try {
+            ManualEngineer me = new ManualEngineer(AGE, EXP);
+            me.setExperience(inputExp);
+
+            JUnitLogger.illegalArgumentExceptionFailedLogs();
+        } catch (IllegalArgumentException e) {
+            JUnitLogger.illegalArgumentExceptionPassedLogs();
+            throw e;
+        }
     }
 }

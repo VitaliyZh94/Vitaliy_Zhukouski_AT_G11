@@ -2,6 +2,7 @@ package junit.engineers;
 
 import engineers.AutomatedEngineer;
 import engineers.ManualEngineer;
+import junit.utils.JUnitLogger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -10,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class SetNotRelevantSkillTest extends EngineerJUnitBaseTest {
+public class SetNotRelevantSkillTest  {
 
     final int AGE = 25;
     final int EXP = 0;
@@ -30,17 +31,31 @@ public class SetNotRelevantSkillTest extends EngineerJUnitBaseTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantSkillAQA() {
-        AutomatedEngineer ae = new AutomatedEngineer(AGE, EXP);
-        ae.setSkill(inputSkill);
 
-        LOGGER.debug("");
+        try {
+            AutomatedEngineer ae = new AutomatedEngineer(AGE, EXP);
+            ae.setSkill(inputSkill);
+
+            JUnitLogger.illegalArgumentExceptionFailedLogs();
+        } catch (IllegalArgumentException e) {
+            JUnitLogger.illegalArgumentExceptionPassedLogs();
+            throw e;
+        }
+
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantSkillQA() {
-        ManualEngineer me = new ManualEngineer(AGE, EXP);
-        me.setSkill(inputSkill);
 
-        LOGGER.debug("");
+        try {
+            ManualEngineer me = new ManualEngineer(AGE, EXP);
+            me.setSkill(inputSkill);
+
+            JUnitLogger.illegalArgumentExceptionFailedLogs();
+        } catch (IllegalArgumentException e) {
+            JUnitLogger.illegalArgumentExceptionPassedLogs();
+            throw e;
+        }
+
     }
 }

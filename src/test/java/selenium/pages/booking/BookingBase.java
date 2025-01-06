@@ -19,10 +19,14 @@ public class BookingBase {
 
     protected WebDriver driver = Driver.getDriver();
     protected static final Logger LOGGER = LogManager.getLogger(BookingBase.class);
+    protected boolean isRegistrationPopIpClosed = false;
 
     private static final String REGISTRATION_POPUP = "//button[@aria-label='Скрыть меню входа в аккаунт.']";
 
+
     protected void checkAndCloseRegistrationPopUp() {
+
+        if (isRegistrationPopIpClosed) return;
 
         LOGGER.trace("Check registration pop-up {}", REGISTRATION_POPUP);
 
@@ -34,6 +38,8 @@ public class BookingBase {
             element.click();
 
             LOGGER.trace("Registration pop-up closed {}", REGISTRATION_POPUP);
+
+            isRegistrationPopIpClosed = true;
 
         } catch (TimeoutException e) {
             LOGGER.error(e.getMessage());

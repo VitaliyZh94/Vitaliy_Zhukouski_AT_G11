@@ -2,6 +2,7 @@ package junit.engineers;
 
 import engineers.AutomatedEngineer;
 import engineers.ManualEngineer;
+import junit.utils.JUnitLogger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +12,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class GetSkillTest extends EngineerJUnitBaseTest {
+public class GetSkillTest {
 
     final int AGE = 25;
     int inputExp;
@@ -31,17 +32,20 @@ public class GetSkillTest extends EngineerJUnitBaseTest {
     @Test
     public void skillTestAQA() {
         AutomatedEngineer ae = new AutomatedEngineer(AGE, inputExp);
-        Assert.assertEquals("Skill is not relevant", inputExp * ae.getCoeff(), ae.getSkill());
+        int expected = inputExp * ae.getCoeff();
+        int actual = ae.getSkill();
+        Assert.assertEquals("Skill is not relevant: expected = " + expected + ", actual = " + actual, expected, actual);
 
-        assertEqualLogs(inputExp * ae.getCoeff(), ae.getSkill());
-        //LOGGER.debug("" + Thread.currentThread().getStackTrace()[1].getMethodName());
+        JUnitLogger.assertEqualsLogs(expected, actual);
     }
 
     @Test
     public void skillTestQA() {
         ManualEngineer me = new ManualEngineer(AGE, inputExp);
-        Assert.assertEquals("Skill is not relevant", inputExp * me.getCoeff(), me.getSkill());
+        int expected = inputExp * me.getCoeff();
+        int actual = me.getSkill();
+        Assert.assertEquals("Skill is not relevant: expected = " + expected + ", actual = " + actual, expected, actual);
 
-        LOGGER.debug("");
+        JUnitLogger.assertEqualsLogs(expected, actual);
     }
 }

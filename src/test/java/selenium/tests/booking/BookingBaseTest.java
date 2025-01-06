@@ -2,10 +2,10 @@ package selenium.tests.booking;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import selenium.driver.Driver;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import selenium.driver.Driver;
 import selenium.pages.booking.BookingBase;
 
 
@@ -24,7 +24,7 @@ public class BookingBaseTest {
 
     @After
     public void quitDriver() {
-        driver.close();
-        LOGGER.info("Finished " + getClass().getSimpleName());
+            LOGGER.info("Finished " + getClass().getSimpleName());
+            driver.close();
     }
 }

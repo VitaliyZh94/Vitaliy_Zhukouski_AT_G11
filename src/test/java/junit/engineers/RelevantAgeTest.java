@@ -2,6 +2,7 @@ package junit.engineers;
 
 import engineers.AutomatedEngineer;
 import engineers.ManualEngineer;
+import junit.utils.JUnitLogger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +12,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class RelevantAgeTest extends EngineerJUnitBaseTest { //check set to constructor and setter + getter
+public class RelevantAgeTest { //check set to constructor and setter + getter
 
     final int EXP = 0;
     final int AGE = 25;
@@ -35,35 +36,39 @@ public class RelevantAgeTest extends EngineerJUnitBaseTest { //check set to cons
     @Test
     public void setToConstructorRelevantAgeAQA() {
         AutomatedEngineer at = new AutomatedEngineer(inputAge, EXP);
-        Assert.assertEquals("Age is not relevant", expectedAge, at.getAge());
+        int actualAge = at.getAge();
+        Assert.assertEquals("Age is not relevant", expectedAge, actualAge);
 
-        LOGGER.debug("");
+        JUnitLogger.assertEqualsLogs(expectedAge, actualAge);
     }
 
     @Test
     public void setToConstructorRelevantAgeQA() {
         ManualEngineer me = new ManualEngineer(inputAge, EXP);
-        Assert.assertEquals("Age is not relevant", expectedAge, me.getAge());
+        int actualAge = me.getAge();
+        Assert.assertEquals("Age is not relevant", expectedAge, actualAge);
 
-        LOGGER.debug("");
+        JUnitLogger.assertEqualsLogs(expectedAge, actualAge);
     }
 
     @Test
     public void setToSetterRelevantAgeAQA() {
         AutomatedEngineer at = new AutomatedEngineer(AGE, EXP);
         at.setAge(inputAge);
-        Assert.assertEquals("Age is not relevant", expectedAge, at.getAge());
+        int actualAge = at.getAge();
+        Assert.assertEquals("Age is not relevant: expected = " + expectedAge + ", actual = " + actualAge, expectedAge, actualAge);
 
-        LOGGER.debug("");
+        JUnitLogger.assertEqualsLogs(expectedAge, actualAge);
     }
 
     @Test
     public void setToSetterRelevantAgeQA() {
         ManualEngineer me = new ManualEngineer(AGE, EXP);
         me.setAge(inputAge);
-        Assert.assertEquals("Age is not relevant", expectedAge, me.getAge());
+        int actualAge = me.getAge();
+        Assert.assertEquals("Age is not relevant: expected = " + expectedAge + ", actual = " + actualAge, expectedAge, actualAge);;
 
-        LOGGER.debug("");
+        JUnitLogger.assertEqualsLogs(expectedAge, actualAge);
     }
 
 }

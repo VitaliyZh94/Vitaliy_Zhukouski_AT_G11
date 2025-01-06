@@ -1,7 +1,12 @@
 package selenium.pages.booking;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class Header extends BookingBase {
 
@@ -29,6 +34,8 @@ public class Header extends BookingBase {
     }
 
     public String currencyHintsText() {
+        checkAndCloseRegistrationPopUp();
+
         LOGGER.trace("Return text in currency hint {}", CURRENCY_HINT);
         return driver.findElement(By.xpath(CURRENCY_HINT)).getText();
     }

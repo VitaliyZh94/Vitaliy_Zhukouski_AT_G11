@@ -2,6 +2,7 @@ package junit.engineers;
 
 import engineers.AutomatedEngineer;
 import engineers.ManualEngineer;
+import junit.utils.JUnitLogger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -10,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class NotRelevantAgeTest extends EngineerJUnitBaseTest {
+public class NotRelevantAgeTest {
 
     final int EXP = 0;
     final int AGE = 25;
@@ -29,29 +30,55 @@ public class NotRelevantAgeTest extends EngineerJUnitBaseTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantAgeToConstructorAQA() {
-        new AutomatedEngineer(inputAge, EXP);
-        LOGGER.debug("");
+
+        try {
+            new AutomatedEngineer(inputAge, EXP);
+
+            JUnitLogger.illegalArgumentExceptionFailedLogs();
+        } catch (IllegalArgumentException e) {
+            JUnitLogger.illegalArgumentExceptionPassedLogs();
+            throw e;
+        }
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantAgeToConstructorQA() {
-        new ManualEngineer(inputAge, EXP);
-        LOGGER.debug("");
+
+        try {
+            new ManualEngineer(inputAge, EXP);
+
+            JUnitLogger.illegalArgumentExceptionFailedLogs();
+        } catch (IllegalArgumentException e) {
+            JUnitLogger.illegalArgumentExceptionPassedLogs();
+            throw e;
+        }
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantAgeToSetterAQA() {
-        AutomatedEngineer ae = new AutomatedEngineer(AGE, EXP);
-        ae.setAge(inputAge);
 
-        LOGGER.debug("");
+        try {
+            AutomatedEngineer ae = new AutomatedEngineer(AGE, EXP);
+            ae.setAge(inputAge);
+
+            JUnitLogger.illegalArgumentExceptionFailedLogs();
+        } catch (IllegalArgumentException e) {
+            JUnitLogger.illegalArgumentExceptionPassedLogs();
+            throw e;
+        }
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void setNotRelevantAgeToSetterQA() {
-        ManualEngineer me = new ManualEngineer(AGE, EXP);
-        me.setAge(inputAge);
 
-        LOGGER.debug("");
+        try {
+            ManualEngineer me = new ManualEngineer(AGE, EXP);
+            me.setAge(inputAge);
+
+            JUnitLogger.illegalArgumentExceptionFailedLogs();
+        } catch (IllegalArgumentException e) {
+            JUnitLogger.illegalArgumentExceptionPassedLogs();
+            throw e;
+        }
     }
 }
