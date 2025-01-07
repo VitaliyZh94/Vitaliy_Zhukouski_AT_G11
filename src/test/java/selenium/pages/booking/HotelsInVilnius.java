@@ -62,7 +62,7 @@ public class HotelsInVilnius extends BookingBase {
     }
 
     public void screenShot() {
-        String fileName = "hotel10";
+        String fileName = "src/test/resources/screenshots/hotel10.png";
 
         File screenshotAs = screenshot.getScreenshotAs(OutputType.FILE);
         try {

@@ -1,5 +1,6 @@
 package selenium.tests.booking;
 
+import junit.utils.JUnitLogger;
 import org.junit.Assert;
 import org.junit.Test;
 import selenium.pages.booking.Apartment;
@@ -9,65 +10,50 @@ import selenium.settings.BookingSettings;
 import selenium.utils.JS;
 
 
-public class HotelRateTest extends BookingBaseTest{
-
+public class CheckApartmentRateTest extends BookingBaseTest{
     SearchApartments searchApartments = new SearchApartments();
+
     BookingSettings bookingSettings = new BookingSettings();
     SortApartments sortApartments = new SortApartments();
-    JS js = new JS(driver);
     Apartment apartment = new Apartment();
 
     @Test
-    public void enterLocationField() {
-        searchApartments.clickOnLocationField();
-        searchApartments.enterLocation("Прага");
+    public void checkApartmentRateMoreThanNine() {
+        openFirstSortedApartment();
+        Assert.assertEquals("Rate must be more than 9. Rate = " + apartment.getApartmentRate(),
+                true,
+                apartment.getApartmentRate() > 9);
 
-        LOGGER.debug("");
+        JUnitLogger.assertEqualsLogs(true, apartment.getApartmentRate() > 9);
     }
 
-    @Test
-    public void setDates() {
+    private void enterLocationField() {
+        searchApartments.clickOnLocationField();
+        searchApartments.enterLocation("Прага");
+    }
+
+    private void setDates() {
         enterLocationField();
         searchApartments.clickDatesTable();
         searchApartments.setArrivalDate(bookingSettings.getArrivalDate());
         searchApartments.setDepartureDate(bookingSettings.getDepartureDate());
-
-        LOGGER.debug("");
     }
 
-    @Test
-    public void setResettlement() {
+    private void setResettlement() {
         setDates();
         searchApartments.submitResettlementTable();
-
-        LOGGER.debug("");
     }
 
-    @Test
-    public void sortApartments() {
+    private void sortApartments() {
         setResettlement();
         sortApartments.clickSortDropDown();
         sortApartments.clickDescendingApartments();
-
-        LOGGER.debug("");
     }
 
-    @Test
-    public void openFirstApartment() {
+    private void openFirstSortedApartment() {
         sortApartments();
+        JS js = new JS(driver);
         js.openURLInCurrentTab(sortApartments.getFIRST_DESCENDING_APARTMENT());
         sortApartments.clickFirstDescendingApartment();
-
-        LOGGER.debug("");
-    }
-
-    @Test
-    public void checkApartmentRateMoreThanNine() {
-        openFirstApartment();
-        Assert.assertEquals("Rate must be more than 9",
-                true,
-                apartment.getApartmentRate() > 9);
-
-        LOGGER.debug("");
     }
 }

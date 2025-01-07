@@ -35,7 +35,9 @@ public class SortApartments extends BookingBase {
 
     public void clickFirstDescendingApartment() {
         driver.findElement(By.xpath(FIRST_DESCENDING_APARTMENT)).click();
+
         LOGGER.trace("Click to first descending apartment {}", FIRST_DESCENDING_APARTMENT);
+        checkAndCloseRegistrationPopUp();
     }
 
     public boolean fifthStarExist() {

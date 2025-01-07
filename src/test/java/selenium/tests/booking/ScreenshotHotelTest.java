@@ -1,7 +1,11 @@
 package selenium.tests.booking;
 
+import junit.utils.JUnitLogger;
+import org.junit.Assert;
 import org.junit.Test;
 import selenium.pages.booking.HotelsInVilnius;
+
+import java.io.File;
 
 
 public class ScreenshotHotelTest extends BookingBaseTest {
@@ -9,30 +13,38 @@ public class ScreenshotHotelTest extends BookingBaseTest {
     HotelsInVilnius hotelsInVilnius = new HotelsInVilnius();
 
     @Test
-    public void openHotelOnNextPage() { //change to London
+    public void checkScreenshotExist() {
+        getScreenshot();
+
+        File directory = new File("src/test/resources/screenshots");
+
+        if (!directory.exists() || !directory.isDirectory()) {
+            Assert.fail("There is no directory " + directory);
+        }
+
+        File[] files = directory.listFiles((dir, name) -> name.endsWith(".png"));
+        boolean actualResult = files != null && files.length > 0;
+
+        Assert.assertEquals("There is no screenshot file in folder " + directory, true, actualResult);
+
+        JUnitLogger.assertEqualsLogs(true, actualResult);
+    }
+
+    private void openHotelOnNextPage() { //change to London
         hotelsInVilnius.openHotelsInVilniusPage();
         hotelsInVilnius.openNextHotelsPage();
         hotelsInVilnius.openHotelOnNextPage();
-
-        LOGGER.debug("");
     }
 
-    @Test
-    public void changeHotelsCardVisual() {
+    private void changeHotelsCardVisual() {
         openHotelOnNextPage();
         hotelsInVilnius.scrollToHotelsCard();
         hotelsInVilnius.changeBackToGreen();
         hotelsInVilnius.changeTittleToRed();
-
-        LOGGER.debug("");
     }
 
-    @Test
-    public void getScreenshot() {
-        openHotelOnNextPage();
+    private void getScreenshot() {
         changeHotelsCardVisual();
         hotelsInVilnius.screenShot();
-
-        LOGGER.debug("");
     }
 }

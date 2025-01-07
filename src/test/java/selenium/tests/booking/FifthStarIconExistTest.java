@@ -18,7 +18,7 @@ public class FifthStarIconExistTest extends BookingBaseTest {
 
     @Test
     public void checkFifthStarIconExist() {
-        openFoundApartment();
+        openFoundedApartment();
         Assert.assertEquals("Apartment don't exist icon \"Five stars\"",
                 true,
                 sortApartments.fifthStarExist());
@@ -57,7 +57,7 @@ public class FifthStarIconExistTest extends BookingBaseTest {
     }
 
 
-    private void openFoundApartment() {
+    private void openFoundedApartment() {
         filterApartments();
         sortApartments.clickSortDropDown();
         sortApartments.clickDescendingApartments();
