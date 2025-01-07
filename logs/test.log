@@ -1,21 +1,21 @@
-2025-01-07 23:17:07 INFO s.t.b.BookingBaseTest [main] Start ScreenshotHotelTest
-2025-01-07 23:17:14 TRACE s.p.b.HotelsInVilnius [main] Open all hotels in Vilnius page. //a[@title='Отели в Вильнюсе, Литва']
-2025-01-07 23:17:14 TRACE s.p.b.BookingBase [main] Check registration pop-up //button[@aria-label='Скрыть меню входа в аккаунт.']
-2025-01-07 23:17:19 ERROR s.p.b.BookingBase [main] Expected condition failed: waiting for element to be clickable: By.xpath: //button[@aria-label='Скрыть меню входа в аккаунт.'] (tried for 5 second(s) with 500 milliseconds interval)
+2025-01-07 23:41:47 INFO s.t.b.BookingBaseTest [main] Start ScreenshotHotelTest
+2025-01-07 23:41:54 TRACE s.p.b.HotelsInVilnius [main] Open all hotels in Vilnius page. //a[@title='Отели в Вильнюсе, Литва']
+2025-01-07 23:41:54 TRACE s.p.b.BookingBase [main] Check registration pop-up //button[@aria-label='Скрыть меню входа в аккаунт.']
+2025-01-07 23:41:59 ERROR s.p.b.BookingBase [main] Expected condition failed: waiting for element to be clickable: By.xpath: //button[@aria-label='Скрыть меню входа в аккаунт.'] (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '4.27.0', revision: 'd6e718d134'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55818}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55818/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7ed42b8a4176fbb7c55299f6339a26d8
-2025-01-07 23:17:21 TRACE s.p.b.HotelsInVilnius [main] Open hotels on next page. //h2[contains(text(), 'и другие виды жилья')]//following-sibling::a
-2025-01-07 23:17:21 TRACE s.p.b.BookingBase [main] Check registration pop-up //button[@aria-label='Скрыть меню входа в аккаунт.']
-2025-01-07 23:17:24 TRACE s.p.b.BookingBase [main] Registration pop-up closed //button[@aria-label='Скрыть меню входа в аккаунт.']
-2025-01-07 23:17:24 TRACE s.p.b.HotelsInVilnius [main] Open hotel on next page. //div[@data-testid='property-card'][10]
-2025-01-07 23:17:24 TRACE s.p.b.HotelsInVilnius [main] Return web element //div[@data-testid='property-card'][10]
-2025-01-07 23:17:24 TRACE s.p.b.HotelsInVilnius [main] Scroll to hotels card. //div[@data-testid='property-card'][10]
-2025-01-07 23:17:24 TRACE s.p.b.HotelsInVilnius [main] Return web element //div[@data-testid='property-card'][10]
-2025-01-07 23:17:24 TRACE s.p.b.HotelsInVilnius [main] Make hotels card backend green. //div[@data-testid='property-card'][10]
-2025-01-07 23:17:24 TRACE s.p.b.HotelsInVilnius [main] Make tittle of hotels card red
-2025-01-07 23:17:25 TRACE s.p.b.HotelsInVilnius [main] Make screenshot src/test/resources/screenshots/hotel10.png
-2025-01-07 23:17:25 DEBUG j.u.JUnitLogger [main] ScreenshotHotelTest: Assert passed: Expected = true. Actual = true
-2025-01-07 23:17:25 INFO s.t.b.BookingBaseTest [main] Finished ScreenshotHotelTest
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.108 (3b014839fbc..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56928}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56928/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d24df862322277d830a7121fb641427c
+2025-01-07 23:42:01 TRACE s.p.b.HotelsInVilnius [main] Open hotels on next page. //h2[contains(text(), 'и другие виды жилья')]//following-sibling::a
+2025-01-07 23:42:01 TRACE s.p.b.BookingBase [main] Check registration pop-up //button[@aria-label='Скрыть меню входа в аккаунт.']
+2025-01-07 23:42:04 TRACE s.p.b.BookingBase [main] Registration pop-up closed //button[@aria-label='Скрыть меню входа в аккаунт.']
+2025-01-07 23:42:04 TRACE s.p.b.HotelsInVilnius [main] Open hotel on next page. //div[@data-testid='property-card'][10]
+2025-01-07 23:42:04 TRACE s.p.b.HotelsInVilnius [main] Return web element //div[@data-testid='property-card'][10]
+2025-01-07 23:42:04 TRACE s.p.b.HotelsInVilnius [main] Scroll to hotels card. //div[@data-testid='property-card'][10]
+2025-01-07 23:42:04 TRACE s.p.b.HotelsInVilnius [main] Return web element //div[@data-testid='property-card'][10]
+2025-01-07 23:42:04 TRACE s.p.b.HotelsInVilnius [main] Make hotels card backend green. //div[@data-testid='property-card'][10]
+2025-01-07 23:42:04 TRACE s.p.b.HotelsInVilnius [main] Make tittle of hotels card red
+2025-01-07 23:42:05 TRACE s.p.b.HotelsInVilnius [main] Make screenshot src/test/resources/screenshots/hotel10.png
+2025-01-07 23:42:05 DEBUG j.u.JUnitLogger [main] ScreenshotHotelTest: Assert passed: Expected = true. Actual = true
+2025-01-07 23:42:05 INFO s.t.b.BookingBaseTest [main] Finished ScreenshotHotelTest

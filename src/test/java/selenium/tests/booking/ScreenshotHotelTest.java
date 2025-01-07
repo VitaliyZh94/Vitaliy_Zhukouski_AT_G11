@@ -27,6 +27,12 @@ public class ScreenshotHotelTest extends BookingBaseTest {
 
         Assert.assertEquals("There is no screenshot file in folder " + directory, true, actualResult);
 
+        if (directory.exists()) {
+            for (File file : files) {
+                file.delete();
+            }
+        }
+
         JUnitLogger.assertEqualsLogs(true, actualResult);
     }
 
