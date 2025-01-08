@@ -2,6 +2,7 @@ package testng.engineers;
 
 import engineers.AutomatedEngineer;
 import engineers.ManualEngineer;
+import junit.utils.TestNGLogger;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -21,16 +22,18 @@ public class TestNGgetSkillTest extends EngineerTestNGBaseTest{
     @Test(dataProvider = "t")
     public void skillTestAQA(int inputExp) {
         AutomatedEngineer ae = new AutomatedEngineer(AGE, inputExp);
-        Assert.assertEquals(ae.getSkill(), inputExp * ae.getCoeff(), "Skill is not relevant");
+        int expected = inputExp * ae.getCoeff();
+        Assert.assertEquals(ae.getSkill(), expected, "Skill is not relevant");
 
-        LOGGER.debug("");
+        TestNGLogger.assertEqualsLogs(ae.getSkill(), expected);
     }
 
     @Test(dataProvider = "t")
     public void skillTestQA(int inputExp) {
         ManualEngineer me = new ManualEngineer(AGE, inputExp);
-        Assert.assertEquals(me.getSkill(), inputExp * me.getCoeff(), "Skill is not relevant");
+        int expected = inputExp * me.getCoeff();
+        Assert.assertEquals(me.getSkill(), expected, "Skill is not relevant");
 
-        LOGGER.debug("");
+        TestNGLogger.assertEqualsLogs(me.getSkill(), expected);
     }
 }

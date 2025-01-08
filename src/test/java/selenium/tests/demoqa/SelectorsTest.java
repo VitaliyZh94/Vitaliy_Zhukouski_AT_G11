@@ -1,6 +1,7 @@
 package selenium.tests.demoqa;
 
-import org.apache.logging.log4j.Logger;
+import junit.utils.JUnitLogger;
+import org.junit.Assert;
 import org.junit.Test;
 import selenium.pages.demoqa.SelectMenu;
 
@@ -9,12 +10,21 @@ public class SelectorsTest extends DemoQABaseTest {
 
     SelectMenu selectMenu = new SelectMenu();
 
-
-    //todo
     @Test
-    public void checkFirstSelector() {
-        //Assert.assertEquals("Must be: Blue", selectMenu.selectFirstSelect(3), ;
+    public void checkBlueSelect() {
+        String expectedColor = "Blue";
+        selectMenu.selectBlue();
+        Assert.assertEquals("Must be: " + expectedColor, expectedColor, selectMenu.getBlueSelectText());
 
-        LOGGER.debug("");
+        JUnitLogger.assertEqualsLogs(selectMenu.getBlueSelectText(), expectedColor);
+    }
+
+    @Test
+    public void checkSaabSelect() {
+        String expectedCar = "Saab";
+        selectMenu.selectSaab();
+        Assert.assertEquals("Must be: " + expectedCar, expectedCar, selectMenu.getSaabSelectText());
+
+        JUnitLogger.assertEqualsLogs(selectMenu.getSaabSelectText(), expectedCar);
     }
 }

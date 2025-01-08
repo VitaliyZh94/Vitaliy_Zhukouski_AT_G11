@@ -11,7 +11,7 @@ import selenium.pages.booking.BookingBase;
 
 public class BookingBaseTest {
 
-    protected static final Logger LOGGER = LogManager.getLogger(BookingBase.class);
+    private static final Logger LOGGER = LogManager.getLogger(BookingBase.class);
     protected static WebDriver driver;
 
     @Before
@@ -24,7 +24,7 @@ public class BookingBaseTest {
 
     @After
     public void quitDriver() {
-            LOGGER.info("Finished " + getClass().getSimpleName());
-            driver.close();
+        LOGGER.info("Finished " + getClass().getSimpleName());
+        driver.quit();
     }
 }

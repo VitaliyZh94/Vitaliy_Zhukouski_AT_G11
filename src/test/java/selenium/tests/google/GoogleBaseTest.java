@@ -12,17 +12,19 @@ import selenium.pages.google.GoogleBase;
 public class GoogleBaseTest {
 
     protected static final Logger LOGGER = LogManager.getLogger(GoogleBaseTest.class);
-    protected WebDriver driver = Driver.getDriver();
+    protected WebDriver driver;
 
     @Before
     public void openSite() {
         LOGGER.info("Start " + getClass().getSimpleName());
+
+        driver = Driver.getDriver();
         driver.get(GoogleBase.URL);
     }
 
     @After
     public void quitDriver() {
-        driver.quit();
         LOGGER.info("Finished " + getClass().getSimpleName());
+        driver.quit();
     }
 }

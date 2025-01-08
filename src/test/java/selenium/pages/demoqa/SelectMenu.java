@@ -5,26 +5,35 @@ import org.openqa.selenium.support.ui.Select;
 
 public class SelectMenu extends DemoQABase {
 
-    private final String FIRST_SELECT_DROP_DOWN = "//select[@id='oldSelectMenu']";
-    private final String SECOND_SELECT_DROP_DOWN = "select[@id='cars']";
-    private final String GROUP1_OPTION2 = "//div[@id = 'react-select-2-option-0-1']"; //Group 1, option 2
-    private final String FIRST_SELECT_CONTAINER = "//div[@id = 'withOptGroup']"; // отсюда надо гет текст и сравнить с Group 1, option 2
-
+    private final String COLOR_DROP_DOWN = "//select[@id='oldSelectMenu']";
+    private final String CAR_DROP_DOWN = "//select[@id='cars']";
+    private final String BLUE_OPTION = "//option[@value='1']";
+    private final String SAAB_OPTION = "//option[@value='saab']";
+    private final String BLUE = "1";
+    private final String SAAB = "saab";
 
     Select select;
 
-    public void selectFirstSelect(int value) {
-        select = new Select(driver.findElement(By.xpath(FIRST_SELECT_DROP_DOWN)));
-        select.selectByValue(Integer.toString(value));
+    public void selectBlue() {
+        select = new Select(driver.findElement(By.xpath(COLOR_DROP_DOWN)));
+        select.selectByValue(BLUE);
 
-        LOGGER.trace("Select first select {}", FIRST_SELECT_DROP_DOWN);
+        LOGGER.trace("Select {} select in {}", BLUE, COLOR_DROP_DOWN);
     }
 
-    public void selectSecondSelect(int value) {
-        select = new Select(driver.findElement(By.xpath(SECOND_SELECT_DROP_DOWN)));
-        select.selectByValue(Integer.toString(value));
+    public void selectSaab() {
+        select = new Select(driver.findElement(By.xpath(CAR_DROP_DOWN)));
+        select.selectByValue(SAAB);
 
-        LOGGER.trace("Select second select {}", SECOND_SELECT_DROP_DOWN);
-        //todo
+        LOGGER.trace("Select {} select in {}", SAAB, CAR_DROP_DOWN);
     }
+
+    public String getBlueSelectText() {
+        return driver.findElement(By.xpath(BLUE_OPTION)).getText();
+    }
+
+    public String getSaabSelectText() {
+        return driver.findElement(By.xpath(SAAB_OPTION)).getText();
+    }
+
 }

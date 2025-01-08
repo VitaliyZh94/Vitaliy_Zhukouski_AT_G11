@@ -13,7 +13,7 @@ public class Driver {
 
     public static WebDriver getDriver() {
 
-        if (driver == null) {
+        if (driver == null || ((ChromeDriver) driver).getSessionId() == null) {
             ChromeOptions options = new ChromeOptions();
 
             options.addArguments("--ignore-certificate-errors");

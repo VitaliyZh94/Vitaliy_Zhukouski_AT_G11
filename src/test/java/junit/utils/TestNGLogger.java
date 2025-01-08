@@ -4,30 +4,21 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 
-public class JUnitLogger {
+public class TestNGLogger {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
     private static String fullClassName = Thread.currentThread().getStackTrace()[2].getClassName();
     private static String simpleClassName = fullClassName.substring(fullClassName.lastIndexOf('.') + 1);
 
-    public static void illegalArgumentExceptionPassedLogs() {
-        LOGGER.debug("{}: IllegalArgumentException passed", simpleClassName);
-    }
-
-    public static void illegalArgumentExceptionFailedLogs() {
-        LOGGER.error("{}: IllegalArgumentException failed", simpleClassName);
-    }
-
     public static void assertEqualsLogs(Object expected, Object actual) {
-
         String methodName = Thread.currentThread().getStackTrace()[2].getMethodName();
 
         Assert.assertEquals(expected, actual);
-        LOGGER.debug("{} {}: Assert passed: Expected = {}. Actual = {}",
+        LOGGER.debug("{} {}: Assert passed: Actual = {}. Expected = {}",
                 simpleClassName,
                 methodName,
-                expected,
-                actual);
+                actual,
+                expected);
     }
 }
