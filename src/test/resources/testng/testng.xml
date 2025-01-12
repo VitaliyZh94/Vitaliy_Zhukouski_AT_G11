@@ -3,7 +3,7 @@
 <suite name="AllTestsSuite" verbose="3">
     <test name="TestNGTests">
         <classes>
-            <class name="testng.engineers.TestNGgetSkillTest"/>
+            <class name="unit.testng.engineers.TestNGgetSkillTest"/>
         </classes>
     </test>
 </suite>

@@ -7,4 +7,6 @@ Feature:
     When I enter Paris in search field
     When I set dates to arrive and departure
     When I set resettlement
-    Then I see list of hotels
+    When I filter apartments
+    When I open founded apartment
+    Then I see fifth star icon

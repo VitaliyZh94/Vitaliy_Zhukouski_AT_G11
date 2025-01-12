@@ -1,4 +1,2 @@
-2025-01-09 00:16:29 DEBUG j.u.TestNGLogger [main] TestNGgetSkillTest skillTestAQA: Assert passed: Actual = 0. Expected = 0
-2025-01-09 00:16:29 DEBUG j.u.TestNGLogger [main] TestNGgetSkillTest skillTestAQA: Assert passed: Actual = 21. Expected = 21
-2025-01-09 00:16:29 DEBUG j.u.TestNGLogger [main] TestNGgetSkillTest skillTestQA: Assert passed: Actual = 0. Expected = 0
-2025-01-09 00:16:29 DEBUG j.u.TestNGLogger [main] TestNGgetSkillTest skillTestQA: Assert passed: Actual = 14. Expected = 14
+2025-01-12 23:58:08 INFO w.t.s.g.GoogleBaseTest [main] Start
+2025-01-12 23:58:11 INFO w.t.s.g.GoogleBaseTest [main] Finished
