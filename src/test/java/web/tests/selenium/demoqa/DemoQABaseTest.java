@@ -25,6 +25,6 @@ public class DemoQABaseTest {
     @After
     public void quitDriver() {
         LOGGER.info("Finished " + getClass().getSimpleName());
-        driver.quit();
+        Driver.quitDriver();
     }
 }

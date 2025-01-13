@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import web.driver.Driver;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
 
@@ -26,7 +27,7 @@ public class BookingBase {
         } else {
             LOGGER.trace("Check registration pop-up {}", REGISTRATION_POPUP);
 
-            if ($x(REGISTRATION_POPUP).exists()) {
+            if ($x(REGISTRATION_POPUP).is(visible)) {
                 $x(REGISTRATION_POPUP).click();
                 isRegistrationPopIpClosed = true;
 

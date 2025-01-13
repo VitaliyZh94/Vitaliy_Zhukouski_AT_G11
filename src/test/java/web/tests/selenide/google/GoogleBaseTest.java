@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import web.driver.Driver;
 import web.pages.selenide.google.GoogleBase;
 
+import static com.codeborne.selenide.Selenide.open;
+
 
 public class GoogleBaseTest {
 
@@ -18,13 +20,11 @@ public class GoogleBaseTest {
     public void openSite() {
         LOGGER.info("Start");
 
-        driver = Driver.getDriver();
-        driver.get(GoogleBase.URL);
+        open(GoogleBase.URL);
     }
 
     @After
     public void quitDriver() {
         LOGGER.info("Finished");
-        driver.quit();
     }
 }

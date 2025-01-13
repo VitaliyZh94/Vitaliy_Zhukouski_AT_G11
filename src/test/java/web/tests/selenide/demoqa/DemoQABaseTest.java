@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import web.driver.Driver;
 import web.pages.selenide.demoqa.DemoQABase;
 
+import static com.codeborne.selenide.Selenide.open;
+
 
 public class DemoQABaseTest {
 
@@ -18,13 +20,11 @@ public class DemoQABaseTest {
     public void openSite() {
         LOGGER.info("Start");
 
-        driver = Driver.getDriver();
-        driver.get(DemoQABase.URL);
+        open(DemoQABase.URL);
     }
 
     @After
     public void quitDriver() {
         LOGGER.info("Finished");
-        driver.quit();
     }
 }

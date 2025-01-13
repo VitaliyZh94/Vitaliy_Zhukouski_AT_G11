@@ -18,7 +18,7 @@ public class CurrencyHintTextTest extends BookingBaseTest {
         header.hoverCurrencyIcon();
 
         Assert.assertEquals("Text must be: Выберите валюту",
-                "Выберите влюту",
+                "Выберите валюту",
                 header.currencyHintsText());
 
         LOGGER.debug("Assert passed: Expected = {}. Actual = {}", "Выберите валюту", header.currencyHintsText());

@@ -1,5 +1,6 @@
 package web.tests.selenide.booking;
 
+import com.codeborne.selenide.Selenide;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
@@ -9,7 +10,6 @@ import web.pages.selenide.booking.ApartmentPage;
 import web.pages.selenide.booking.main_page.SearchApartmentsComponent;
 import web.pages.selenide.booking.main_page.SortApartmentsComponent;
 import web.settings.BookingSettings;
-import web.utils.JS;
 
 
 public class CheckApartmentRateTest extends BookingBaseTest {
@@ -31,8 +31,9 @@ public class CheckApartmentRateTest extends BookingBaseTest {
         searchApartments.submitResettlementTable();
         sortApartments.clickSortDropDown();
         sortApartments.clickDescendingApartments();
-        JS js = new JS(driver);
-        js.openURLInCurrentTab(sortApartments.getFIRST_DESCENDING_APARTMENT());
+        Selenide.switchTo().window(1);
+        //JS js = new JS(driver);
+        //js.openURLInCurrentTab(sortApartments.getFIRST_DESCENDING_APARTMENT());
         sortApartments.clickFirstDescendingApartment();
 
         Assert.assertEquals("Rate must be more than 9. Rate = " + apartment.getApartmentRate(),
