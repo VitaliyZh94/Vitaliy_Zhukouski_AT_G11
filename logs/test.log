@@ -1,0 +1,3 @@
+2025-01-18 10:23:00 DEBUG a.t.SearchUserByStrictNameTest [main] Assert passed: 
+Expected = TestUser{id='1', username='a', realname='Alberto Boo', password='b', email='alberto.boo@mail.com'}, 
+Actual = TestUser{id='1', username='a', realname='Alberto Boo', password='b', email='alberto.boo@mail.com'}
