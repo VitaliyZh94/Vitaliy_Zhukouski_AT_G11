@@ -2,7 +2,7 @@ package web.pages.selenium.booking;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import web.driver.Driver;
+import web.driver.DriverSelenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +17,7 @@ public class BookingBase {
 
     public static final String URL = "https://www.booking.com/";
 
-    protected WebDriver driver = Driver.getDriver();
+    protected WebDriver driver = DriverSelenium.getDriver();
     private static final Logger LOGGER = LogManager.getLogger(BookingBase.class);
     protected boolean isRegistrationPopIpClosed = false;
 

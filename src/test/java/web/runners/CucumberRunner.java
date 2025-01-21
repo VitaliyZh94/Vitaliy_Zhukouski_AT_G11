@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "summary"},
         glue = {"web"},
-        features = {"src/test/resources/features/booking/CheckHeartButtonRed.feature"},
+        features = {"src/test/resources/features/jotform/CheckFormCreated.feature"},
         tags = "@QA"
 )
 public class CucumberRunner {

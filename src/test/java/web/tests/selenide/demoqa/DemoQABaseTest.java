@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
-import web.driver.Driver;
 import web.pages.selenide.demoqa.DemoQABase;
 
 import static com.codeborne.selenide.Selenide.open;

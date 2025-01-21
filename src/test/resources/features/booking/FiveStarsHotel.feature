@@ -3,7 +3,7 @@ Feature:
 
   @QA
   Scenario: Find hotels in Paris
-    Given I open a site
+    Given I open a web site
     When I enter Paris in search field
     When I set dates to arrive and departure
     When I set resettlement

@@ -110,8 +110,8 @@
                 <version>3.5.2</version>
                 <configuration>
                     <includes>
-<!--                        <include>**CucumberRunner.java</include>-->
-                        <include>**/SelenideRunner.java</include>
+                        <include>**CucumberRunner.java</include>
+<!--                        <include>**/SelenideRunner.java</include>-->
                     </includes>
 <!--                    <suiteXmlFiles>-->
 <!--                        <suiteXmlFile>src/test/resources/testng/testng.xml</suiteXmlFile>-->
