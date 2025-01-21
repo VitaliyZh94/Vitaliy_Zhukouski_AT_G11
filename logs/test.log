@@ -1,5 +1,0 @@
-2025-01-21 18:53:57 DEBUG w.s.b.BookingBaseSteps [main] Given: I open a site - passed
-2025-01-21 18:53:57 TRACE w.p.s.b.m.SearchApartmentsComponent [main] Click on location field //input[@role='combobox']
-2025-01-21 18:53:58 TRACE w.p.s.b.BookingBase [main] Check registration pop-up //button[@aria-label='Скрыть меню входа в аккаунт.']
-2025-01-21 18:54:03 ERROR w.p.s.b.BookingBase [main] Expected condition failed: waiting for element to be clickable: By.xpath: //button[@aria-label='Скрыть меню входа в аккаунт.'] (tried for 5 second(s) with 500 milliseconds interval)
-2025-01-21 18:54:03 TRACE w.p.s.b.m.SearchApartmentsComponent [main] Enter location to field //input[@role='combobox']
