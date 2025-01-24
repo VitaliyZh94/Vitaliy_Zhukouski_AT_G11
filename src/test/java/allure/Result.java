@@ -1,4 +1,4 @@
-package Allure;
+package allure;
 
 public class Result {
 

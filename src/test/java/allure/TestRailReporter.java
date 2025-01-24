@@ -1,4 +1,4 @@
-package Allure;
+package allure;
 
 import io.restassured.RestAssured;
 import io.restassured.authentication.PreemptiveBasicAuthScheme;

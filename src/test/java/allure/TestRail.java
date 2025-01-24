@@ -1,4 +1,4 @@
-package Allure;
+package allure;
 
 import org.testng.Assert;
 import org.testng.annotations.Listeners;

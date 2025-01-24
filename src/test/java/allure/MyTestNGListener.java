@@ -1,4 +1,4 @@
-package Allure;
+package allure;
 
 import org.testng.ITestListener;
 import org.testng.ITestResult;
